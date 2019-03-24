@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8b048233-01f0-428e-b149-647c79791838" name="Default Changelist" comment="" />
+    <list default="true" id="8b048233-01f0-428e-b149-647c79791838" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Genetic Algorithem.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reproduction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/05_Genetic Mutation with Python.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CostsFunction.py" beforeDir="false" afterPath="$PROJECT_DIR$/cost_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.py" beforeDir="false" afterPath="$PROJECT_DIR$/Program.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,28 +39,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Program.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="70" column="34" selection-start-line="70" selection-start-column="34" selection-end-line="70" selection-end-column="34" />
+            <state relative-caret-position="464">
+              <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
               <folding>
-                <element signature="e#109#336#0" />
-                <element signature="e#389#880#0" />
-                <element signature="e#483#590#0" />
-                <element signature="e#920#1220#0" />
-                <element signature="e#1049#1136#0" />
-                <element signature="e#1268#1453#0" />
-                <element signature="e#1456#1477#0" />
-                <element signature="e#2712#5821#0" />
-                <element signature="e#2931#3303#0" />
-                <element signature="e#3649#3889#0" />
-                <element signature="e#3758#3868#0" />
-                <element signature="e#3940#4531#0" />
-                <element signature="e#4657#4927#0" />
-                <element signature="e#5309#5350#0" />
-                <element signature="e#5625#5729#0" />
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cost_functions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-98">
+              <caret line="85" selection-start-line="85" selection-end-line="85" />
             </state>
           </provider>
         </entry>
@@ -66,14 +70,17 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/CostsFunction.py" />
         <option value="$PROJECT_DIR$/Selection.py" />
+        <option value="$PROJECT_DIR$/CrossingOver.py" />
         <option value="$PROJECT_DIR$/Program.py" />
+        <option value="$PROJECT_DIR$/reproduction.py" />
+        <option value="$PROJECT_DIR$/cost_functions.py" />
       </list>
     </option>
   </component>
@@ -104,13 +111,8 @@
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
             <path>
-              <item name="05_Genetic Mutation with Python" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="Genetic Algorithem" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="05_Genetic Mutation with Python" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name=".idea" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -123,7 +125,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -181,11 +183,15 @@
       <workItem from="1553283704010" duration="10400000" />
       <workItem from="1553325536885" duration="28179000" />
       <workItem from="1553410927103" duration="2008000" />
+      <workItem from="1553413210423" duration="3639000" />
+      <workItem from="1553416988555" duration="17272000" />
+      <workItem from="1553453282007" duration="34000" />
+      <workItem from="1553453419586" duration="7305000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57594000" />
+    <option name="totallyTimeSpent" value="85844000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -201,7 +207,7 @@
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.49932706" side_tool="true" weight="0.26647565" />
       <window_info id="Favorites" order="1" sideWeight="0.50067294" side_tool="true" weight="0.247851" />
-      <window_info auto_hide="true" content_ui="combo" id="Project" order="2" sideWeight="0.50067294" type="SLIDING" weight="0.25573066" />
+      <window_info auto_hide="true" content_ui="combo" id="Project" order="2" sideWeight="0.50067294" type="SLIDING" weight="0.2700454" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" type="SLIDING" weight="0.32923076" />
       <window_info anchor="bottom" id="Cvs" order="2" weight="0.25" />
@@ -214,19 +220,59 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="10" sideWeight="0.66332376" weight="0.2664872" />
       <window_info anchor="bottom" id="Debug" order="11" sideWeight="0.3918338" weight="0.2664872" />
-      <window_info active="true" anchor="bottom" x="-756" y="490" width="1396" height="263" id="Terminal" order="12" sideWeight="0.6081662" visible="true" weight="0.2664872" />
-      <window_info anchor="bottom" id="Python Console" order="13" sideWeight="0.5737822" weight="0.23418574" />
+      <window_info anchor="bottom" x="-756" y="490" width="1396" height="263" id="Terminal" order="12" sideWeight="0.6081662" weight="0.2664872" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="13" sideWeight="0.5737822" visible="true" weight="0.24899058" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="News Feed" order="3" />
-      <window_info anchor="right" x="-718" y="222" width="365" height="643" id="SciView" order="4" sideWeight="0.6385321" weight="0.3187679" />
+      <window_info anchor="right" x="-718" y="222" width="365" height="643" id="SciView" order="4" sideWeight="0.6385321" visible="true" weight="0.33524355" />
       <window_info anchor="right" auto_hide="true" x="351" y="265" width="571" height="300" id="Documentation" order="5" sideWeight="0.66260743" type="FLOATING" weight="0.3366762" />
       <window_info anchor="right" id="Database" order="6" sideWeight="0.48849106" side_tool="true" type="SLIDING" weight="0.3409742" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -248,13 +294,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Selection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/ProgramData/Anaconda3/Lib/random.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3568">
@@ -262,34 +301,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CostsFunction.py">
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/numpy/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="16" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="16" />
+        <state relative-caret-position="-816" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Selection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="40" column="6" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reproduction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="752">
+          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Program.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="70" column="34" selection-start-line="70" selection-start-column="34" selection-end-line="70" selection-end-column="34" />
+        <state relative-caret-position="464">
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
           <folding>
-            <element signature="e#109#336#0" />
-            <element signature="e#389#880#0" />
-            <element signature="e#483#590#0" />
-            <element signature="e#920#1220#0" />
-            <element signature="e#1049#1136#0" />
-            <element signature="e#1268#1453#0" />
-            <element signature="e#1456#1477#0" />
-            <element signature="e#2712#5821#0" />
-            <element signature="e#2931#3303#0" />
-            <element signature="e#3649#3889#0" />
-            <element signature="e#3758#3868#0" />
-            <element signature="e#3940#4531#0" />
-            <element signature="e#4657#4927#0" />
-            <element signature="e#5309#5350#0" />
-            <element signature="e#5625#5729#0" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cost_functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-98">
+          <caret line="85" selection-start-line="85" selection-end-line="85" />
         </state>
       </provider>
     </entry>

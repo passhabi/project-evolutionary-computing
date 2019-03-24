@@ -1,57 +1,9 @@
 import numpy as np
 from Selection import RandomSelection
 
-
-def single_point_crossover(parent1, parent2):
-    n = len(parent1)
-    cut_point = np.random.randint(low=1, high=n - 1)
-    child1 = np.append(parent1[0:cut_point], parent2[cut_point:])
-    child2 = np.append(parent2[0:cut_point], parent1[cut_point:])
-    return child1, child2
-
-
-def double_point_crossover(parent1, parent2):
-    n = len(parent1)
-
-    cut_point1 = cut_point2 = 0
-    while cut_point2 <= cut_point1:
-        cut_point1 = np.random.randint(low=1, high=n - 1)
-        cut_point2 = np.random.randint(low=1, high=n - 1)
-
-    child1 = np.append(parent1[0:cut_point1], parent2[cut_point1:cut_point2])
-    child1 = np.append(child1, parent1[cut_point2:])
-
-    child2 = np.append(parent2[0:cut_point1], parent1[cut_point1:cut_point2])
-    child2 = np.append(child2, parent2[cut_point2:])
-    return child1, child2
-
-
-def crossover(parent1, parent2):
-    s = np.random.randint(1, high=3)
-
-    if s == 1:
-        return single_point_crossover(parent1, parent2)
-
-    if s == 2:
-        child1, child2 = double_point_crossover(parent1, parent2)
-        return child1, child2
-
-    child1, child2 = uniform_crossover(parent1, parent2)
-    return child1, child2
-
-
-def uniform_crossover(parent1, parent2):
-    n = len(parent1)
-    alpha = np.random.randint(0, 2)
-
-    child1 = alpha * parent1 + (1 - alpha) * parent2
-    child2 = alpha * parent2 + (1 - alpha) * parent1
-    return child1, child2
-
-
 # problem definition:
 #  sphere Cost Function:
-from CostsFunction import sphere as cost_function
+from cost_functions import sphere as cost_function
 
 min_boundary = -10
 max_boundary = 10
@@ -60,8 +12,8 @@ dimension = 5
 # Genetic parameters:
 num_agents = 1000  # [set by user]
 prob_crossover = 0.8  # the probability of crossover, chance of an agents to crossover. [set by user]
-# the number of agents to participate in crossovering.
-# note we need two agents for a crossover, than number of agents for crossovering must be an even number.
+# the number of agents to participate in crossing over.
+# note we need two agents for a crossover, than number of agents for crossing over must be an even number.
 num_agents_cv = 2 * round((num_agents * prob_crossover) / 2)
 
 prob_mutation = 0.2
@@ -79,10 +31,11 @@ fitness = np.sum(population ** 2, axis=1).reshape([num_agents, 1])  # compute fi
 max_iteration = 100
 error = np.zeros(max_iteration)
 
+randomSelection = RandomSelection(num_agents_cv)
+from reproduction import crossover, mutation
+
 # main loop:
 for it in range(max_iteration):
-
-    randomSelection = RandomSelection(num_agents_cv)
 
     'Crossover'
     child_population = np.zeros([num_agents_cv, dimension])  # create a array to store new child agent.
@@ -100,35 +53,6 @@ for it in range(max_iteration):
     mutated_population = np.zeros([num_agents_mu, dimension])  # create a array to store new mutated agent.
 
 
-    def non_repeat_randint(low, high, size):
-        # todo: check for inputs
-        import random
-        list = []
-        while len(list) < size:
-            random_number = random.randint(low, high)
-            if random_number not in list: list.append(random_number)
-
-        return list
-
-
-    def mutation(agent, mutation_rate):
-        import random
-
-        if mutation_rate < 0 or mutation_rate > 1:
-            raise Exception("Mutation rate must be between 0 and 1")
-
-        dimension = len(agent)
-        step_size = 0.1 * (max_boundary - min_boundary)
-
-        num_mutation = round(mutation_rate * dimension)  # how many gene(input) of a chromosome should change?
-        indexes = non_repeat_randint(0, dimension - 1, num_mutation)
-
-        for index in indexes:
-            agent[index] = agent[index] + step_size * random.normalvariate(mu=0, sigma=1)  # just a formula.
-
-        mutated = agent
-        return mutated
-
 
     del randomSelection
     randomSelection = RandomSelection(num_agents_mu)
@@ -145,7 +69,7 @@ for it in range(max_iteration):
     population = np.append(np.append(population, child_population, axis=0), mutated_population, axis=0)
     fitness = np.append(np.append(fitness, child_fitness), mutated_fitness).reshape(-1, 1)
     # sort base on the fitness function (dec)
-    # throw away uselesses
+    # throw away useless agents
     ans = np.argsort(fitness, axis=0)[:num_agents]  # get index of first (num_agents: int) sorted agent.
     iii = 0
     sorted_population = np.zeros([num_agents, dimension])
