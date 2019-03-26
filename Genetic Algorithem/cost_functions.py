@@ -1,12 +1,14 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from reproduction import non_repeat_randint as nrandint
+
+
+# from reproduction import non_repeat_randint
 
 
 class CostFunction:
-    dimensions = None
-    max_boundary = None
-    min_boundary = None
+    dimensions: int
+    min_boundary: int
+    max_boundary: int
 
     def get_dimensions(self):
         return self.dimensions
@@ -26,12 +28,12 @@ class Sphere(CostFunction):
     def __init__(self):
         self.dimensions = 5
 
-        # maximum and minimum of response boundary in each dimension:
+        # maximum and minimum of response boundary in each __dimension:
         self.min_boundary = -10
         self.max_boundary = +10
 
     def compute_fitness(self, agent_row):
-        fitness = sum(agent_row ** 2)
+        fitness = np.sum(agent_row ** 2, axis=1)
         return fitness
 
 
@@ -40,9 +42,9 @@ class TravellingSalesmanProblem(CostFunction):
     def __init__(self, num_of_cities: int, distance_range: int = None):
         self.dimensions = num_of_cities
 
-        # maximum and minimum of response boundary in each dimension:
+        # maximum and minimum of response boundary in each __dimension:
         self.min_boundary = 0
-        self.max_boundary = num_of_cities
+        self.max_boundary = num_of_cities - 1
 
         # virtual distance between cites:
         if distance_range is not None:
@@ -58,14 +60,16 @@ class TravellingSalesmanProblem(CostFunction):
 
         # compute distance:
         self.distance_matrix = np.zeros(
-            [self.dimensions, self.dimensions])  # make a empty n×n matrix, dimension = number of cities
+            [self.dimensions, self.dimensions])  # make a empty n×n matrix, __dimension = number of cities
 
         # compute euclidean distance between cities and store it in distance matrix:
-        for row in range(1, self.dimensions - 1):
-            for column in range(row + 1, self.dimensions):
+        for row in range(0, self.dimensions):
+            for column in range(row, self.dimensions):
                 self.distance_matrix[row, column] = np.sqrt(np.exp2(x_axises[row] - x_axises[column]) + np.exp2(
                     y_axises[row] - y_axises[column]))  # upper triangular matrix
-                # diagonal is zero
+                # diagonal is zero:
+                if row == column:
+                    self.distance_matrix[column, row] = np.inf
                 self.distance_matrix[column, row] = self.distance_matrix[row, column]  # and lower triangular matrix..
                 #                                                                        is the same is the upper.
         # join x and y axises, first row: x axises second is y axises:
@@ -80,16 +84,17 @@ class TravellingSalesmanProblem(CostFunction):
     def plot_agent_travel_order(self, agent_row):
         agent_row = np.append(agent_row, agent_row[0])  # adding the first element to the last. e.g. 5 > 4 > 3 > [5].
 
-        fig, aplot = plt.subplot()
-        aplot.scatter(self.cities[0, :], self.cities[1, :], marker='k^')
-        annotate_cities = np.arange(1, self.dimensions+1)
+        agent_row = agent_row.astype(int)
+
+        plt.scatter(self.cities[0, :], self.cities[1, :], marker='o')
+        # annotate_cities = np.arange(1, self.dimensions + 1)
 
         # add number annotate to cities:
-        for num in annotate_cities:
-            aplot.annotate(num, (self.cities[0, num], self.cities[1, num]))
+        # for num in annotate_cities:
+        #     aplot.annotate(num, (self.cities[0, num], self.cities[1, num]))
 
-        fig.plot(self.cities[0, agent_row], self.cities[1, agent_row])
-        fig.show()
+        plt.plot(self.cities[0, agent_row], self.cities[1, agent_row])
+        plt.show()
 
     def create_cities(self):
         # todo: user can create its own cities
@@ -106,12 +111,14 @@ class TravellingSalesmanProblem(CostFunction):
                             "object definition whether use create_cities() function to make your own cities")
 
         cost = 0
-        agent_row = np.append(agent_row, agent_row[0])  # adding the first element to the last. e.g. 5 > 4 > 3 > [5].
+        # adding the first element to the last. e.g. 5 > 4 > 3 > [5].
+        agent_row = np.hstack((agent_row, agent_row[:, 0].reshape(-1, 1)))
         # need a loop to travel to the first city.
 
+        agent_row = agent_row.astype(int)
         for index in range(0, self.dimensions):
-            i = agent_row[index]  # distance of the first city)to
-            ii = agent_row[index + 1]  # the second city is following:
+            i = agent_row[:, index]  # distance of the first city)to
+            ii = agent_row[:, index + 1]  # the second city is following:
             cost += self.distance_matrix[i, ii]
 
         return cost

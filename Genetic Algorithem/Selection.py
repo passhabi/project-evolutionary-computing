@@ -1,14 +1,14 @@
-import random
+import numpy as np
 
 
 class Selection:
 
-    def __init__(self, num_agents: int):
+    def __init__(self, population_size: int):
         """
 
-        :param num_agents: Upper boundary of num_agents range
+        :param population_size: Upper boundary of num_agents range
         """
-        self.num_agents = num_agents  # upper boundary of num_agents range
+        self.num_agents = population_size  # upper boundary of num_agents range
 
     def get_selected(self):
         raise NotImplementedError()
@@ -41,4 +41,4 @@ class TournamentSelection(Selection):
 class RandomSelection(Selection):
 
     def get_selected(self):
-        return random.randint(0, self.num_agents)
+        return np.random.randint(0, self.num_agents)
