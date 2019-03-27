@@ -10,7 +10,7 @@ from cost_functions import TravellingSalesmanProblem
 ff = TravellingSalesmanProblem(10, 100)  # fitness function
 
 # set Genetic parameters:
-cv = CrossingOver(ff, population_size=2000)
+cv = CrossingOver(ff, population_size=100, mutation_probability=0.9)
 
 # make the primitive population, create a (__population_size×__dimension) matrix with random numbers:
 population = non_repeat_randint(low=ff.get_min_boundary(), high=ff.get_max_boundary(),
@@ -19,7 +19,7 @@ population = non_repeat_randint(low=ff.get_min_boundary(), high=ff.get_max_bound
 fitness_vector = ff.compute_fitness(population).reshape([-1, 1])
 
 # create a container for plotting the result:
-max_iteration = 1001
+max_iteration = 551
 best_fitness = np.zeros(max_iteration)  # save best fitness in each iteration
 
 randomSelection = RandomSelection(cv.get_population_size() - 1)  # indices start with zero
@@ -71,8 +71,8 @@ for iteration in range(max_iteration):
     population = sorted_population
     fitness_vector = sorted_fitness
 
-    if iteration % 50 == 0:
-        print("iteration", iteration, "(", population[0], "FF:", fitness_vector[0], ")")
+    if iteration % 5 == 0:
+        print("iteration", iteration, "(", population[0], " FF:{}".format(fitness_vector[0]), ")")
     best_fitness[iteration] = fitness_vector[0]
 
 plt.plot(range(0, max_iteration), best_fitness)

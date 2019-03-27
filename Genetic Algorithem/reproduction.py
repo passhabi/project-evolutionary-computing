@@ -118,7 +118,7 @@ class CrossingOver:
             raise Exception("Mutation rate must be between 0 and 1")
 
         # how many gene(input) of a chromosome should change?
-        change_rate: int = round(mutation_rate * self.__dimension)
+        change_rate = round(mutation_rate * self.__dimension)
 
         indexes = non_repeat_randint(0, self.__dimension - 1, change_rate)  # get the chosen indices for change.
         agent = agent_row.copy()  # agent_row (call by reference).

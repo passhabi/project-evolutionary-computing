@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from collections import Counter
 
 
 # from reproduction import non_repeat_randint
@@ -58,18 +59,18 @@ class TravellingSalesmanProblem(CostFunction):
         x_axises = np.random.randint(0, self.distance_range, size=self.dimensions)
         y_axises = np.random.randint(0, self.distance_range, size=self.dimensions)
 
-        # compute distance:
+        # compute distance:s
         self.distance_matrix = np.zeros(
             [self.dimensions, self.dimensions])  # make a empty n×n matrix, __dimension = number of cities
 
         # compute euclidean distance between cities and store it in distance matrix:
-        for row in range(0, self.dimensions):
-            for column in range(row, self.dimensions):
+        for row in range(0, self.dimensions - 1):  # this was dimensions - 1
+            for column in range(row + 1, self.dimensions):  # this was row + 1
                 self.distance_matrix[row, column] = np.sqrt(np.exp2(x_axises[row] - x_axises[column]) + np.exp2(
                     y_axises[row] - y_axises[column]))  # upper triangular matrix
                 # diagonal is zero:
-                if row == column:
-                    self.distance_matrix[column, row] = np.inf
+                # if row == column:
+                #     self.distance_matrix[column, row] = np.inf
                 self.distance_matrix[column, row] = self.distance_matrix[row, column]  # and lower triangular matrix..
                 #                                                                        is the same is the upper.
         # join x and y axises, first row: x axises second is y axises:
@@ -100,10 +101,10 @@ class TravellingSalesmanProblem(CostFunction):
         # todo: user can create its own cities
         pass
 
-    def compute_fitness(self, agent_row):
+    def compute_fitness(self, agent):
         """
 
-        :param agent_row: is a combination order to travel to cities.
+        :param agent: matrix is a combination order to travel to cities.
         :return: cost of the given order.
         """
         if self.distance_range is None:
@@ -112,13 +113,25 @@ class TravellingSalesmanProblem(CostFunction):
 
         cost = 0
         # adding the first element to the last. e.g. 5 > 4 > 3 > [5].
-        agent_row = np.hstack((agent_row, agent_row[:, 0].reshape(-1, 1)))
+        agent = np.hstack((agent, agent[:, 0].reshape(-1, 1)))
         # need a loop to travel to the first city.
 
-        agent_row = agent_row.astype(int)
+        agent = agent.astype(int)
         for index in range(0, self.dimensions):
-            i = agent_row[:, index]  # distance of the first city)to
-            ii = agent_row[:, index + 1]  # the second city is following:
+            i = agent[:, index]  # distance of the first city)to
+            ii = agent[:, index + 1]  # the second city is following:
             cost += self.distance_matrix[i, ii]
 
+        '''
+        # find duplicate gene:
+        none_duplicates = []
+        agent = agent[:, :-1]  # dont count last gene, due to the adding the first element with hstack.
+        for row in range(agent.shape[0]):
+            count = 1
+            for gene in agent[row]:
+                if gene not in none_duplicates:
+                    none_duplicates.append(gene)
+                else:
+                    cost[row] = np.inf
+        '''
         return cost
