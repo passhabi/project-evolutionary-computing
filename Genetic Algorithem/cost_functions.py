@@ -122,8 +122,8 @@ class TravellingSalesmanProblem(CostFunction):
             ii = agent[:, index + 1]  # the second city is following:
             cost += self.distance_matrix[i, ii]
 
-        '''
         # find duplicate gene:
+        '''
         none_duplicates = []
         agent = agent[:, :-1]  # dont count last gene, due to the adding the first element with hstack.
         for row in range(agent.shape[0]):

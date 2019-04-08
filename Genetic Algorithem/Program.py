@@ -10,7 +10,7 @@ from cost_functions import TravellingSalesmanProblem
 ff = TravellingSalesmanProblem(10, 100)  # fitness function
 
 # set Genetic parameters:
-cv = CrossingOver(ff, population_size=100, mutation_probability=0.9)
+cv = CrossingOver(ff, population_size=500, mutation_probability=0.3)
 
 # make the primitive population, create a (__population_size×__dimension) matrix with random numbers:
 population = non_repeat_randint(low=ff.get_min_boundary(), high=ff.get_max_boundary(),
@@ -48,7 +48,7 @@ for iteration in range(max_iteration):
         # find an agent for mutation:
         agent_index = randomSelection.get_selected()
         # mutation and save the new population, new agents (mutated) in the mutated_population array list:
-        mutated_population[i] = cv.mutation(population[agent_index])
+        mutated_population[i] = cv.mutation(population[agent_index], mutation_rate=0.1)
 
     # compute the fitness_vector for the new population (mutated) in a column array:
     mutated_fitness_vector = ff.compute_fitness(mutated_population).reshape([-1, 1])
@@ -71,8 +71,9 @@ for iteration in range(max_iteration):
     population = sorted_population
     fitness_vector = sorted_fitness
 
-    if iteration % 5 == 0:
+    if iteration % 10 == 0:
         print("iteration", iteration, "(", population[0], " FF:{}".format(fitness_vector[0]), ")")
+        ff.plot_agent_travel_order(population[0])
     best_fitness[iteration] = fitness_vector[0]
 
 plt.plot(range(0, max_iteration), best_fitness)
@@ -80,4 +81,3 @@ plt.xlabel("iteration")
 plt.ylabel("Fitness")
 plt.show()
 
-ff.plot_agent_travel_order(population[0])

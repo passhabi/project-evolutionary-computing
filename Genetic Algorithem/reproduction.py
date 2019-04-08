@@ -5,7 +5,6 @@ from cost_functions import CostFunction
 
 
 def non_repeat_randint(low, high, size):
-
     # todo: check for inputs
 
     # a vector:
