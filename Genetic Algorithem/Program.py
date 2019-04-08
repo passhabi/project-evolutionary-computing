@@ -10,7 +10,7 @@ from cost_functions import TravellingSalesmanProblem
 ff = TravellingSalesmanProblem(10, 100)  # fitness function
 
 # set Genetic parameters:
-cv = CrossingOver(ff, population_size=500, mutation_probability=0.3)
+cv = CrossingOver(ff, population_size=100, mutation_rate=0.5)
 
 # make the primitive population, create a (__population_size×__dimension) matrix with random numbers:
 population = non_repeat_randint(low=ff.get_min_boundary(), high=ff.get_max_boundary(),
@@ -20,7 +20,7 @@ fitness_vector = ff.compute_fitness(population).reshape([-1, 1])
 
 # create a container for plotting the result:
 max_iteration = 551
-best_fitness = np.zeros(max_iteration)  # save best fitness in each iteration
+best_score = np.zeros(max_iteration)  # save best fitness in each iteration
 
 randomSelection = RandomSelection(cv.get_population_size() - 1)  # indices start with zero
 # main loop:
@@ -41,21 +41,9 @@ for iteration in range(max_iteration):
     # compute the fitness_vector for the new population (children) in a column array:
     child_fitness_vector = ff.compute_fitness(child_population).reshape([-1, 1])
 
-    'Mutation'
-    mutated_population = np.zeros([cv.get_mu_size(), ff.get_dimensions()])  # create a array to store new mutated agent.
-
-    for i in range(0, cv.get_mu_size()):
-        # find an agent for mutation:
-        agent_index = randomSelection.get_selected()
-        # mutation and save the new population, new agents (mutated) in the mutated_population array list:
-        mutated_population[i] = cv.mutation(population[agent_index], mutation_rate=0.1)
-
-    # compute the fitness_vector for the new population (mutated) in a column array:
-    mutated_fitness_vector = ff.compute_fitness(mutated_population).reshape([-1, 1])
-
     'Merge'
-    population = np.append(np.append(population, child_population, axis=0), mutated_population, axis=0)
-    fitness_vector = np.append(np.append(fitness_vector, child_fitness_vector), mutated_fitness_vector).reshape(-1, 1)
+    population = np.append(population, child_population, axis=0)
+    fitness_vector = np.append(fitness_vector, child_fitness_vector)
     # sort base on the fitness_vector function (dec)
     # throw away useless agents by getting only the indexes of top of the sorted array.
     ans = np.argsort(fitness_vector, axis=0)[:cv.get_population_size()]
@@ -74,9 +62,9 @@ for iteration in range(max_iteration):
     if iteration % 10 == 0:
         print("iteration", iteration, "(", population[0], " FF:{}".format(fitness_vector[0]), ")")
         ff.plot_agent_travel_order(population[0])
-    best_fitness[iteration] = fitness_vector[0]
+    best_score[iteration] = fitness_vector[0]
 
-plt.plot(range(0, max_iteration), best_fitness)
+plt.plot(range(0, max_iteration), best_score)
 plt.xlabel("iteration")
 plt.ylabel("Fitness")
 plt.show()
