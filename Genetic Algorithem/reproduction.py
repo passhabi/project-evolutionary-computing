@@ -28,30 +28,28 @@ def non_repeat_randint(low, high, size):
 
 class CrossingOver:
 
-    def __init__(self, cost_fucntion: CostFunction, population_size: int = 50, cross_over_probability: float = 0.8,
-                 mutation_probability: float = 0.2):
+    def __init__(self, cost_function: CostFunction, population_size: int = 50, mutation_rate=0.1,
+                 cross_over_probability: float = 1.0):
         """
         :param population_size: int - number of agents.
-        :param cost_fucntion: CostFucntion - fitness_vector function.
+        :param cost_function: CostFunction - fitness_vector function.
+        :param mutation_rate:
         :param cross_over_probability: float - the probability of crossover, chance of an agents for crossing over.
-        :param mutation_probability:
         """
 
         # get the aspects of problem:
-        self.__dimension = cost_fucntion.get_dimensions()
-        self.__max_boundary = cost_fucntion.get_max_boundary()
-        self.__min_boundary = cost_fucntion.get_min_boundary()
+        self.__dimension = cost_function.get_dimensions()
+        self.__max_boundary = cost_function.get_max_boundary()
+        self.__min_boundary = cost_function.get_min_boundary()
 
-        self.__sigma = 0.1 * (cost_fucntion.get_max_boundary() - cost_fucntion.get_min_boundary())  # use for mutation
+        self.__sigma = 0.1 * (cost_function.get_max_boundary() - cost_function.get_min_boundary())  # use for mutation
 
         self.__population_size = population_size
 
+        self.__mutation_rate = mutation_rate
         # the number of agents to participate in crossing over.
         # note we need two agents for a crossover, than number of agents for crossing over must be an even number.
         self.__agents_size_cv = 2 * round((population_size * cross_over_probability) / 2)
-
-        self.__agents_size_mu = round(
-            mutation_probability * population_size)  # number of agents under the influence of mutation.
 
     def get_cv_size(self):
         """
@@ -59,13 +57,6 @@ class CrossingOver:
         :return:
         """
         return self.__agents_size_cv
-
-    def get_mu_size(self):
-        """
-        The number of agents to participate in mutation.
-        :return:
-        """
-        return self.__agents_size_mu
 
     def __single_point_crossover(self, parent1, parent2):
         cut_point = np.random.randint(low=1, high=self.__dimension - 1)
@@ -95,37 +86,37 @@ class CrossingOver:
         return child1, child2
 
     def crossover(self, parent1, parent2):
-        random_num = np.random.randint(1, high=4)
+        cut_point_chooser = np.random.randint(1, high=3)
 
-        if random_num == 1:
-            return self.__single_point_crossover(parent1, parent2)  # dose't need bounding
+        if cut_point_chooser == 1:
+            child1, child2 = self.__single_point_crossover(parent1, parent2)  # dose't need bounding
 
-        if random_num == 2:
-            return self.__double_point_crossover(parent1, parent2)
+        if cut_point_chooser == 2:
+            child1, child2 = self.__double_point_crossover(parent1, parent2)
 
-        child1, child2 = self.__uniform_crossover(parent1, parent2)
+        # child1, child2 = self.__uniform_crossover(parent1, parent2)
 
         # boundary check:
-        child1 = self.__check_fix_boundary(child1)
-        child2 = self.__check_fix_boundary(child2)
+        # child1 = self.__check_fix_boundary(child1)
+        # child2 = self.__check_fix_boundary(child2)
 
-        return child1.astype(int), child2.astype(int)
+        # mutation on children:
+        child1 = self.mutation(agent_row=child1)
+        child2 = self.mutation(agent_row=child2)
 
-    def mutation(self, agent_row, mutation_rate: float = 0.6):
+        return child1, child2
 
-        if mutation_rate < 0 or mutation_rate > 1:
-            raise Exception("Mutation rate must be between 0 and 1")
+    def mutation(self, agent_row):
+        """
 
-        # how many gene(input) of a chromosome should change?
-        change_rate = round(mutation_rate * self.__dimension)
-
-        indexes = non_repeat_randint(0, self.__dimension - 1, change_rate)  # get the chosen indices for change.
-        agent = agent_row.copy()  # agent_row (call by reference).
-        for index in indexes:
-            agent[index] = agent[index] + self.__sigma * random.normalvariate(mu=0, sigma=1)  # just a formula.
-
-        agent = np.array(agent).astype(int)
-        return self.__check_fix_boundary(agent)  # return mutated agents, the new mutated population of agents.
+        :param agent_row:
+        :return:
+        """
+        for i in range(0, len(agent_row)):
+            if np.random.rand() < self.__mutation_rate:
+                # change the gene to a new value:
+                agent_row[i] = np.random.randint(self.__min_boundary, self.__max_boundary)
+        return agent_row
 
     def get_population_size(self):
         return self.__population_size
