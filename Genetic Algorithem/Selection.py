@@ -30,9 +30,9 @@ class RouletteWheelSelection(Selection):
 
         probability = nominator / denominator  # Cumulative probability vector
 
-        self.cdf = []
-        for i in range(len(probability)):
-            self.cdf.append(sum(probability[0:i+1]))  # Cumulative probability function
+        self.cdf = [probability[0]]  # add the the first element to the list.
+        for i in range(1, len(probability)):
+            self.cdf.append(self.cdf[i-1] + probability[i])  # Cumulative probability function
 
         self.cdf = np.array(self.cdf)
 
@@ -42,7 +42,6 @@ class RouletteWheelSelection(Selection):
 
         indicator = np.random.rand()
         return np.array(np.where(indicator <= self.cdf)).flatten()[0]
-
 
 
 class RankingSelection(Selection):

@@ -106,11 +106,24 @@ class CrossingOver:
         :param agent_row:
         :return:
         """
+        '''
         for i in range(0, len(agent_row)):
             if np.random.rand() < self.__mutation_rate:
                 # change the gene to a new value:
                 agent_row[i] = np.random.randint(self.__cost_function.get_min_boundary(),
                                                  self.__cost_function.get_max_boundary())
+        '''
+        for i in range(0, len(agent_row)):
+            if np.random.rand() < self.__mutation_rate:
+                # change the gene to a new value:
+                idx1 = np.random.randint(self.__cost_function.get_max_boundary())
+                idx2 = np.random.randint(self.__cost_function.get_max_boundary())
+
+                # swap index1 with index2:
+                temp = agent_row[idx1]
+                agent_row[idx1] = agent_row[idx2]
+                agent_row[idx2] = temp
+
         return agent_row
 
     def get_population_size(self):

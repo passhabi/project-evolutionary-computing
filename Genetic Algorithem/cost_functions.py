@@ -39,8 +39,10 @@ class Sphere(CostFunction):
 
 
 class TravellingSalesmanProblem(CostFunction):
+    y_axises: list
+    x_axises: list
 
-    def __init__(self, num_of_cities: int, distance_range: int = None):
+    def __init__(self, num_of_cities: int = None, distance_range: int = None):
         self.dimensions = num_of_cities
 
         # maximum and minimum of response boundary in each __dimension:
@@ -53,12 +55,15 @@ class TravellingSalesmanProblem(CostFunction):
             self.__generate_cities()
         else:
             self.distance_range = None
-        # plot the cities:
 
     def __generate_cities(self):
-        x_axises = np.random.randint(0, self.distance_range, size=self.dimensions)
-        y_axises = np.random.randint(0, self.distance_range, size=self.dimensions)
+        self.x_axises = np.random.randint(0, self.distance_range, size=self.dimensions)
+        self.y_axises = np.random.randint(0, self.distance_range, size=self.dimensions)
 
+        self.__compute_distance()
+        # self.plot_cities()
+
+    def __compute_distance(self):
         # compute distance:s
         self.distance_matrix = np.zeros(
             [self.dimensions, self.dimensions])  # make a empty n×n matrix, __dimension = number of cities
@@ -66,17 +71,16 @@ class TravellingSalesmanProblem(CostFunction):
         # compute euclidean distance between cities and store it in distance matrix:
         for row in range(0, self.dimensions - 1):  # this was dimensions - 1
             for column in range(row + 1, self.dimensions):  # this was row + 1
-                self.distance_matrix[row, column] = np.sqrt(np.exp2(x_axises[row] - x_axises[column]) + np.exp2(
-                    y_axises[row] - y_axises[column]))  # upper triangular matrix
+                self.distance_matrix[row, column] = np.sqrt(
+                    np.exp2(self.x_axises[row] - self.x_axises[column]) + np.exp2(
+                        self.y_axises[row] - self.y_axises[column]))  # upper triangular matrix
                 # diagonal is zero:
                 # if row == column:
                 #     self.distance_matrix[column, row] = np.inf
                 self.distance_matrix[column, row] = self.distance_matrix[row, column]  # and lower triangular matrix..
                 #                                                                        is the same is the upper.
         # join x and y axises, first row: x axises second is y axises:
-        self.cities = np.append(x_axises.reshape(1, -1), y_axises.reshape(1, -1), axis=0)
-
-        self.plot_cities()
+        self.cities = np.append(self.x_axises.reshape(1, -1), self.y_axises.reshape(1, -1), axis=0)
 
     def plot_cities(self):
         plt.scatter(self.cities[0, :], self.cities[1, :], marker='o')
@@ -97,9 +101,22 @@ class TravellingSalesmanProblem(CostFunction):
         plt.plot(self.cities[0, agent_row], self.cities[1, agent_row])
         plt.show()
 
-    def create_cities(self):
-        # todo: user can create its own cities
-        pass
+    def create_cities(self, x: list, y: list):
+        if len(x) != len(y):
+            raise Exception("x and y must be same size")
+        self.x_axises = np.array(x)
+        self.y_axises = np.array(y)
+
+        num_of_cities = len(x)
+        self.dimensions = num_of_cities
+
+        # maximum and minimum of response boundary in each __dimension:
+        self.min_boundary = 0
+        self.max_boundary = num_of_cities - 1
+
+        self.distance_range = True
+
+        self.__compute_distance()
 
     def compute_fitness(self, agent):
         """
@@ -122,15 +139,4 @@ class TravellingSalesmanProblem(CostFunction):
             ii = agent[:, index + 1]  # the second city is following:
             cost += self.distance_matrix[i, ii]
 
-        # find duplicate gene:
-        """
-        none_duplicates = []
-        agent = agent[:, :-1]  # dont count last gene, due to the adding the first element with hstack.
-        for row in range(agent.shape[0]):
-            for gene in agent[row]:
-                if gene not in none_duplicates:
-                    none_duplicates.append(gene)
-                else:
-                   cost[row] += 100
-        """
         return cost

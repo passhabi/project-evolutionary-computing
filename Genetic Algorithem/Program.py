@@ -8,10 +8,11 @@ from reproduction import non_repeat_randint
 # from cost_functions import Sphere
 from cost_functions import TravellingSalesmanProblem
 
-ff = TravellingSalesmanProblem(10, 100)  # fitness function
+ff = TravellingSalesmanProblem(num_of_cities= 5, distance_range=100)  # fitness function
+# ff.create_cities([10, 50, 30, 40, 10, 93, 20, 25], [5, 17, 80, 10, 12, 42, 14, 77])
 
 # set Genetic parameters:
-cv = CrossingOver(ff, population_size=100, mutation_rate=0.1)
+cv = CrossingOver(ff, population_size=100, mutation_rate=0.8)
 
 # make the primitive population, create a (__population_size×__dimension) matrix with random numbers:
 population = non_repeat_randint(low=ff.get_min_boundary(), high=ff.get_max_boundary(),
@@ -20,8 +21,8 @@ population = non_repeat_randint(low=ff.get_min_boundary(), high=ff.get_max_bound
 fitness_vector = ff.compute_fitness(population).reshape([-1, 1])
 
 # create a container for plotting the result:
-max_iteration = 501
-best_score = np.zeros(max_iteration)  # save best fitness in each iteration
+max_iteration = 100
+best_score = []  # save best fitness in each iteration
 
 # randomSelection = RandomSelection(cv.get_population_size() - 1)  # indices start with zero
 rouletteWheelSelection = RouletteWheelSelection(cv.get_population_size() - 1)
@@ -31,6 +32,7 @@ for iteration in range(max_iteration):
     'Crossover'
     # create a array to store new child agent in child population:
     child_population = np.zeros([cv.get_cv_size(), ff.get_dimensions()])
+
     for i in range(1, cv.get_cv_size(), 2):
         rouletteWheelSelection.make_roulette_wheel(fitness_vector)
         # find two parent to crossover with:
@@ -59,13 +61,13 @@ for iteration in range(max_iteration):
         i += 1
     population = sorted_population
     fitness_vector = sorted_fitness
+    best_score.append(fitness_vector[0])
 
-    if iteration % 10 == 0:
-        print("iteration", iteration, "(", population[0], " FF:{}".format(fitness_vector[0]), ")")
+    if iteration % 5 == 0:
+        print("iteration", iteration, "= ", population[0], " FF:{}".format(fitness_vector[0]))
+        ff.plot_agent_travel_order(population[0])
 
-ff.plot_agent_travel_order(population[0])
-
-plt.plot(range(0, max_iteration), best_score)
+plt.plot(range(0, len(best_score)), best_score)
 plt.xlabel("iteration")
 plt.ylabel("Fitness")
 plt.show()
