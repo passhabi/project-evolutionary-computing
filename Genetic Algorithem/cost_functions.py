@@ -123,15 +123,14 @@ class TravellingSalesmanProblem(CostFunction):
             cost += self.distance_matrix[i, ii]
 
         # find duplicate gene:
-        '''
+        """
         none_duplicates = []
         agent = agent[:, :-1]  # dont count last gene, due to the adding the first element with hstack.
         for row in range(agent.shape[0]):
-            count = 1
             for gene in agent[row]:
                 if gene not in none_duplicates:
                     none_duplicates.append(gene)
                 else:
-                    cost[row] = np.inf
-        '''
+                   cost[row] += 100
+        """
         return cost
