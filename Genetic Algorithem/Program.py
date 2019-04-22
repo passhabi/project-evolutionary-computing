@@ -1,3 +1,8 @@
+"""
+by Hussein Asshabi & Fatemeh Khodabakhsh
+22 April 2019
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 from Selection import *
@@ -7,8 +12,9 @@ from reproduction import non_repeat_randint
 # problem definition:
 # from cost_functions import Sphere
 from cost_functions import TravellingSalesmanProblem
-
-ff = TravellingSalesmanProblem(num_of_cities= 5, distance_range=100)  # fitness function
+from cost_functions import N_Queen
+ff = N_Queen()
+# ff = TravellingSalesmanProblem(num_of_cities= 5, distance_range=100)  # fitness function
 # ff.create_cities([10, 50, 30, 40, 10, 93, 20, 25], [5, 17, 80, 10, 12, 42, 14, 77])
 
 # set Genetic parameters:
@@ -16,7 +22,7 @@ cv = CrossingOver(ff, population_size=100, mutation_rate=0.8)
 
 # make the primitive population, create a (__population_size×__dimension) matrix with random numbers:
 population = non_repeat_randint(low=ff.get_min_boundary(), high=ff.get_max_boundary(),
-                                size=[cv.get_population_size(), ff.get_dimensions()])  # todo: changed the randint?
+                                size=[cv.get_population_size(), ff.get_dimensions()])
 # compute fitness_vector function for primitive population (each agent in population):
 fitness_vector = ff.compute_fitness(population).reshape([-1, 1])
 
@@ -65,8 +71,8 @@ for iteration in range(max_iteration):
 
     if iteration % 5 == 0:
         print("iteration", iteration, "= ", population[0], " FF:{}".format(fitness_vector[0]))
-        ff.plot_agent_travel_order(population[0])
 
+ff.plot_solution(population[0])
 plt.plot(range(0, len(best_score)), best_score)
 plt.xlabel("iteration")
 plt.ylabel("Fitness")

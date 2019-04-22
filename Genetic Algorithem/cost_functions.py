@@ -20,6 +20,9 @@ class CostFunction:
     def get_min_boundary(self):
         return self.min_boundary
 
+    def plot_solution(self, agent_row):
+        raise NotImplementedError
+
     def compute_fitness(self, agent_row):
         raise NotImplementedError
 
@@ -36,6 +39,9 @@ class Sphere(CostFunction):
     def compute_fitness(self, agent_row):
         fitness = np.sum(agent_row ** 2, axis=1)
         return fitness
+
+    def plot_solution(self, agent_row):
+        pass
 
 
 class TravellingSalesmanProblem(CostFunction):
@@ -86,7 +92,7 @@ class TravellingSalesmanProblem(CostFunction):
         plt.scatter(self.cities[0, :], self.cities[1, :], marker='o')
         plt.show()
 
-    def plot_agent_travel_order(self, agent_row):
+    def plot_solution(self, agent_row):
         agent_row = np.append(agent_row, agent_row[0])  # adding the first element to the last. e.g. 5 > 4 > 3 > [5].
 
         agent_row = agent_row.astype(int)
@@ -139,4 +145,58 @@ class TravellingSalesmanProblem(CostFunction):
             ii = agent[:, index + 1]  # the second city is following:
             cost += self.distance_matrix[i, ii]
 
+        return cost
+
+
+class N_Queen(CostFunction):
+    """
+    by Fatemeh Khodabakhsh
+    22 April 2019
+    """
+    def __init__(self, num_of_queen: int = 8):
+        self.dimensions = num_of_queen
+
+        # maximum and minimum of response boundary in each __dimension:
+        self.min_boundary = 0
+        self.max_boundary = num_of_queen
+
+    def get_dimensions(self):
+        return self.dimensions
+
+    def get_max_boundary(self):
+        return self.max_boundary
+
+    def get_min_boundary(self):
+        return self.min_boundary
+
+    def plot_solution(self, solution: list):
+        size = len(solution)
+        for row in range(1, size):
+            line = "  "
+            for col in range(1, size):
+                if solution[row] == col:
+                    line += "👑 "
+                else:
+                    line += "⬜ "
+            print(line)
+
+    def compute_fitness(self, agent_row):
+        fitness_list = []
+        for agent in agent_row:
+            # add computed fitness to the list of costs:
+            fitness_list.append(self.compute_cost(agent))
+        return np.array(fitness_list)
+
+    def compute_cost(self, chromosome):
+        cost = 0
+        columns = [i + 1 for i in range(len(chromosome))]
+        rows = [j + 1 for j in range(len(chromosome))]
+
+        for col in columns:
+            for row in rows:
+                if col != row:
+                    if chromosome[col - 1] == chromosome[row - 1]:
+                        cost += 1
+                    if abs(col - row) == abs(chromosome[col - 1] - chromosome[row - 1]):
+                        cost += 1
         return cost

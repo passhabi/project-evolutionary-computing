@@ -4,9 +4,7 @@
     <list default="true" id="8b048233-01f0-428e-b149-647c79791838" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.py" beforeDir="false" afterPath="$PROJECT_DIR$/Program.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Selection.py" beforeDir="false" afterPath="$PROJECT_DIR$/Selection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cost_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/cost_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reproduction.py" beforeDir="false" afterPath="$PROJECT_DIR$/reproduction.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,7 +14,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/05_Genetic_Mutation_with_Python$Program.coverage" NAME="Program Coverage Results" MODIFIED="1553380257812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Genetic_Algorithem$Program.coverage" NAME="Program Coverage Results" MODIFIED="1554734536385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Genetic_Algorithem$Program.coverage" NAME="Program Coverage Results" MODIFIED="1555960007581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -40,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Program.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="14" column="58" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
+            <state relative-caret-position="286">
+              <caret line="62" column="34" lean-forward="true" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -50,12 +48,42 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://C:/ProgramData/Anaconda3/Lib/codecs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="309" selection-start-line="309" selection-end-line="309" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cost_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1120">
-              <caret line="70" column="65" lean-forward="true" selection-start-line="70" selection-start-column="65" selection-end-line="70" selection-end-column="65" />
+            <state relative-caret-position="126">
+              <caret line="148" lean-forward="true" selection-start-line="148" selection-end-line="148" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#256#278#0" />
+                <element signature="e#320#344#0" />
+                <element signature="e#386#410#0" />
+                <element signature="e#551#707#0" />
+                <element signature="e#998#1399#0" />
+                <element signature="e#1273#1346#0" />
+                <element signature="e#1442#1673#0" />
+                <element signature="e#2061#2738#0" />
+                <element signature="e#2144#2738#0" />
+                <element signature="e#2384#2403#0" />
+                <element signature="e#2946#3026#0" />
+                <element signature="e#3086#3620#0" />
+                <element signature="e#3318#3371#0" />
+                <element signature="e#3677#4118#0" />
+                <element signature="e#4166#5016#0" />
+                <element signature="e#4166#4297#1" />
+                <element signature="e#4350#4527#0" />
+                <element signature="e#4366#4526#0" />
+                <element signature="e#4825#4995#0" />
+                <element signature="e#5565#5838#0" />
+                <element signature="e#5633#5838#0" />
+                <element signature="e#5700#5814#0" />
               </folding>
             </state>
           </provider>
@@ -64,8 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reproduction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="125" lean-forward="true" selection-start-line="125" selection-end-line="125" />
+            <state relative-caret-position="110">
+              <caret line="113" column="63" lean-forward="true" selection-start-line="113" selection-start-column="63" selection-end-line="113" selection-end-column="63" />
               <folding>
                 <element signature="e#121#584#0" />
                 <element signature="e#121#145#0" />
@@ -73,6 +101,16 @@
                 <element signature="e#251#364#0" />
                 <element signature="e#467#565#0" />
                 <element signature="e#770#1057#1" />
+                <element signature="e#1245#1300#0" />
+                <element signature="e#1542#1665#0" />
+                <element signature="e#1542#1628#1" />
+                <element signature="e#2056#2629#0" />
+                <element signature="e#2136#2319#0" />
+                <element signature="e#2692#3018#0" />
+                <element signature="e#3645#3704#1" />
+                <element signature="e#4613#4642#0" />
+                <element signature="e#4699#5142#0" />
+                <element signature="e#4699#4985#1" />
               </folding>
             </state>
           </provider>
@@ -102,48 +140,25 @@
         <option value="$PROJECT_DIR$/CostsFunction.py" />
         <option value="$PROJECT_DIR$/CrossingOver.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/reproduction.py" />
         <option value="$PROJECT_DIR$/Selection.py" />
         <option value="$PROJECT_DIR$/cost_functions.py" />
+        <option value="$PROJECT_DIR$/reproduction.py" />
         <option value="$PROJECT_DIR$/Program.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="228" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1026" />
-    <option name="height" value="546" />
+    <option name="width" value="1456" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Genetic Algorithem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Genetic Algorithem" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="Genetic Algorithem" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -151,7 +166,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -221,12 +236,17 @@
       <workItem from="1553723343039" duration="1342000" />
       <workItem from="1553769853808" duration="577000" />
       <workItem from="1554700153928" duration="10727000" />
-      <workItem from="1554715647884" duration="17014000" />
+      <workItem from="1554715647884" duration="17193000" />
+      <workItem from="1554976065622" duration="1566000" />
+      <workItem from="1555276521808" duration="804000" />
+      <workItem from="1555314521084" duration="854000" />
+      <workItem from="1555359037621" duration="643000" />
+      <workItem from="1555953530706" duration="4227000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175356000" />
+    <option name="totallyTimeSpent" value="183629000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -239,7 +259,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.49932706" side_tool="true" weight="0.26647565" />
       <window_info id="Favorites" order="1" sideWeight="0.50067294" side_tool="true" weight="0.247851" />
@@ -256,7 +275,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="10" sideWeight="0.66332376" visible="true" weight="0.2664872" />
       <window_info anchor="bottom" x="40" y="60" width="1360" height="739" id="Debug" order="11" sideWeight="0.3918338" weight="0.2664872" />
-      <window_info anchor="bottom" x="-756" y="490" width="1396" height="263" id="Terminal" order="12" sideWeight="0.6081662" weight="0.2664872" />
+      <window_info anchor="bottom" x="-756" y="490" width="1396" height="263" id="Terminal" order="12" sideWeight="0.6081662" weight="0.32405892" />
       <window_info anchor="bottom" id="Python Console" order="13" sideWeight="0.5737822" weight="0.24899058" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -317,6 +336,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/reproduction.py</url>
+          <line>122</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -395,13 +421,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/ProgramData/Anaconda3/Lib/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="309" selection-start-line="309" selection-end-line="309" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore" />
     <entry file="file://$PROJECT_DIR$/Selection.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -413,10 +432,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="309" selection-start-line="309" selection-end-line="309" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cost_functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="148" lean-forward="true" selection-start-line="148" selection-end-line="148" />
+          <folding>
+            <element signature="e#256#278#0" />
+            <element signature="e#320#344#0" />
+            <element signature="e#386#410#0" />
+            <element signature="e#551#707#0" />
+            <element signature="e#998#1399#0" />
+            <element signature="e#1273#1346#0" />
+            <element signature="e#1442#1673#0" />
+            <element signature="e#2061#2738#0" />
+            <element signature="e#2144#2738#0" />
+            <element signature="e#2384#2403#0" />
+            <element signature="e#2946#3026#0" />
+            <element signature="e#3086#3620#0" />
+            <element signature="e#3318#3371#0" />
+            <element signature="e#3677#4118#0" />
+            <element signature="e#4166#5016#0" />
+            <element signature="e#4166#4297#1" />
+            <element signature="e#4350#4527#0" />
+            <element signature="e#4366#4526#0" />
+            <element signature="e#4825#4995#0" />
+            <element signature="e#5565#5838#0" />
+            <element signature="e#5633#5838#0" />
+            <element signature="e#5700#5814#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/reproduction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="125" lean-forward="true" selection-start-line="125" selection-end-line="125" />
+        <state relative-caret-position="110">
+          <caret line="113" column="63" lean-forward="true" selection-start-line="113" selection-start-column="63" selection-end-line="113" selection-end-column="63" />
           <folding>
             <element signature="e#121#584#0" />
             <element signature="e#121#145#0" />
@@ -424,24 +481,24 @@
             <element signature="e#251#364#0" />
             <element signature="e#467#565#0" />
             <element signature="e#770#1057#1" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cost_functions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1120">
-          <caret line="70" column="65" lean-forward="true" selection-start-line="70" selection-start-column="65" selection-end-line="70" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#1245#1300#0" />
+            <element signature="e#1542#1665#0" />
+            <element signature="e#1542#1628#1" />
+            <element signature="e#2056#2629#0" />
+            <element signature="e#2136#2319#0" />
+            <element signature="e#2692#3018#0" />
+            <element signature="e#3645#3704#1" />
+            <element signature="e#4613#4642#0" />
+            <element signature="e#4699#5142#0" />
+            <element signature="e#4699#4985#1" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Program.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="58" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
+        <state relative-caret-position="286">
+          <caret line="62" column="34" lean-forward="true" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
