@@ -172,6 +172,11 @@ pyvenv.cfg
 pip-selfcheck.json
 
 # Genetic Algorithem:
-/Genetic Algorithem/.idea/
-/Genetic Algorithem/venve/
-/Genetic Algorithem/__pycache__/
+Genetic Algorithem/.idea
+Genetic Algorithem/venve
+Genetic Algorithem/__pycache__
+
+# ICA
+Imperialist Competitive Algorithm (ICA)/.idea
+Imperialist Competitive Algorithm (ICA)/venve
+Imperialist Competitive Algorithm (ICA)/__pycache__

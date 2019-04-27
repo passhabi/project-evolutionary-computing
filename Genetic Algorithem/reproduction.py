@@ -5,6 +5,10 @@ from cost_functions import CostFunction
 
 
 def non_repeat_randint(low, high, size):
+    """
+    by Hussein Asshabi
+    last update: 17 April 2019
+    """
     # todo: check for inputs
 
     # a vector:
@@ -27,6 +31,10 @@ def non_repeat_randint(low, high, size):
 
 
 class CrossingOver:
+    """
+    by Hussein Asshabi
+    last update: 18 April 2019
+    """
 
     def __init__(self, cost_function: CostFunction, population_size: int = 100, mutation_rate=0.1,
                  cross_over_probability: float = 1.0):
@@ -116,8 +124,8 @@ class CrossingOver:
         for i in range(0, len(agent_row)):
             if np.random.rand() < self.__mutation_rate:
                 # change the gene to a new value:
-                idx1 = np.random.randint(self.__cost_function.get_max_boundary())
-                idx2 = np.random.randint(self.__cost_function.get_max_boundary())
+                idx1 = np.random.randint(len(agent_row))
+                idx2 = np.random.randint(len(agent_row))
 
                 # swap index1 with index2:
                 temp = agent_row[idx1]
