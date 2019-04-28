@@ -1,8 +1,9 @@
 from numpy import random
 from random import shuffle
+from typing import Union, Tuple
 
 
-def permutation_int(size):
+def permutation_int(size: Union[int, Tuple[int]]):
     """
 
     :param size: int
@@ -56,7 +57,6 @@ def non_repeat_randint(low, high, size):
         number_array[idx] = not_included[]
     '''
     return range_list[:size]
-
 
 # import time
 #
