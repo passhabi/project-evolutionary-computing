@@ -11,9 +11,9 @@ class Selection:
     def __init__(self, population_size: int):
         """
 
-        :param population_size: Upper boundary of num_agents range
+        :param population_size: Upper boundary of __num_agents range
         """
-        self.num_agents = population_size  # upper boundary of num_agents range
+        self.__num_agents = population_size  # upper boundary of __num_agents range
 
     def get_selected(self):
         raise NotImplementedError()
@@ -99,4 +99,7 @@ class TournamentSelection(Selection):
 class RandomSelection(Selection):
 
     def get_selected(self):
-        return np.random.randint(0, self.num_agents)
+        """
+        :return: get an index
+        """
+        return np.random.randint(0, self.__num_agents)

@@ -2,25 +2,31 @@ import numpy as np
 import matplotlib.pyplot as plt
 from collections import Counter
 
+
 class CostFunction:
 
     def __init__(self):
         """
 
         """
-        self.dimenstion = None
-        self.boundary = (None, None)
+        self.dimensions = 0
+        self.min_boundary: int = 0
+        self.max_boundary: int = 0
 
     def get_dimensions(self):
         return self.dimensions
 
-    def get_boundary(self):
-        return self.boundary
+    def get_max_boundary(self):
+        return self.max_boundary
+
+    def get_min_boundary(self):
+        return self.min_boundary
 
     def plot_solution(self, agent_row):
         raise NotImplementedError
 
-    def compute_fitness(self, agent_row):
+    def compute_cost(self, agent_row):
+        # todo: remove for loops
         raise NotImplementedError
 
 
@@ -31,13 +37,14 @@ class Sphere(CostFunction):
     """
 
     def __init__(self):
+        super().__init__()
         self.dimensions = 5
 
         # maximum and minimum of response boundary in each __dimension:
         self.min_boundary = -10
         self.max_boundary = +10
 
-    def compute_fitness(self, agent_row):
+    def compute_cost(self, agent_row):
         fitness = np.sum(agent_row ** 2, axis=1)
         return fitness
 
@@ -45,10 +52,10 @@ class Sphere(CostFunction):
         pass
 
 
-
 class NQueen(CostFunction):
 
     def __init__(self, num_of_queen: int = 8):
+        super().__init__()
         self.dimensions = num_of_queen
 
         # maximum and minimum of response boundary in each __dimension:
@@ -75,14 +82,15 @@ class NQueen(CostFunction):
                     line += "⬜ "
             print(line)
 
-    def compute_fitness(self, agent_row):
+    def compute_cost(self, agent_row):
         fitness_list = []
         for agent in agent_row:
             # add computed fitness to the list of costs:
             fitness_list.append(self.compute_cost_agent(agent))
         return np.array(fitness_list)
 
-    def compute_cost_agent(self, chromosome):
+    @staticmethod
+    def compute_cost_agent(chromosome):
         # compute cost for an agent or chromosome
         cost = 0
         columns = [i + 1 for i in range(len(chromosome))]
@@ -99,7 +107,6 @@ class NQueen(CostFunction):
         return cost
 
 
-
 class TravellingSalesmanProblem(CostFunction):
     """
     by Hussein Asshabi
@@ -110,6 +117,7 @@ class TravellingSalesmanProblem(CostFunction):
     x_axises: list
 
     def __init__(self, num_of_cities: int = None, distance_range: int = None):
+        super().__init__()
         self.dimensions = num_of_cities
 
         # maximum and minimum of response boundary in each __dimension:
@@ -185,16 +193,19 @@ class TravellingSalesmanProblem(CostFunction):
 
         self.__compute_distance()
 
-    def compute_fitness(self, agent):
+    def compute_cost(self, agent: np.array):
         """
 
         :param agent: matrix is a combination order to travel to cities.
         :return: cost of the given order.
         """
         if self.distance_range is None:
-            raise Exception("There are no cities; Initialize distance_range on"
-                            "object definition whether use create_cities() function to make your own cities")
+            raise Exception("There are no cities; Initialize distance range on object"
+                            " definition whether use create_cities() function to make your own cities")
         cost = 0
+        # convert it to numpy array with right shape:
+        agent = np.array(agent).reshape(-1, self.get_dimensions())
+
         # adding the first element to the last. e.g. 5 > 4 > 3 > [5].
         agent = np.hstack((agent, agent[:, 0].reshape(-1, 1)))
         # need a loop to travel to the first city.

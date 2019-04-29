@@ -1,9 +1,9 @@
 from numpy import random
 from random import shuffle
-from typing import Union, Tuple
+from typing import Union, List
 
 
-def permutation_int(size: Union[int, Tuple[int]]):
+def permutation_int(size: Union[int, List[int]]):
     """
 
     :param size: int

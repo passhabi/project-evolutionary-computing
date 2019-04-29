@@ -11,7 +11,7 @@ from reproduction import non_repeat_randint
 from cost_functions import *
 
 # problem definition:
-max_iteration = 5100
+max_iteration = 500
 print("s) sphere")
 print("t) Traveling Salesman problem")
 print("q) n Queen")
@@ -66,8 +66,7 @@ for iteration in range(max_iteration):
     fitness_vector = np.append(fitness_vector, child_fitness_vector)
     # sort base on the fitness_vector function (dec)
     # throw away useless agents by getting only the indexes of top of the sorted array.
-    ans = np.argsort(fitness_vector, axis=0)[:cv.get_population_size()]
-
+    ans = np.argsort(fitness_vector).tolist()[: cv.get_population_size()]
     i = 0
     sorted_population = np.zeros([cv.get_population_size(), fitness_func.get_dimensions()])
     sorted_fitness = np.zeros(cv.get_population_size())
