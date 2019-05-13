@@ -191,8 +191,6 @@ class ICA:
 
     def intra_competitive(self):
         for empire in self.__empires_list:
-            if empire.get_colonies_size() is 0:
-                continue
             empire.intra_competitive()
 
 
@@ -219,7 +217,7 @@ class Empire:
 
     def add_colony(self, colony: Union[int, list]):
         self.__colonies_list.extend(colony)
-        # self.__colonies_cost_list = self.get_cost(self.__colonies_list)
+        self.__colonies_cost_list = self.get_cost(self.__colonies_list)
 
         # todo: self.__total_power
 
@@ -303,4 +301,4 @@ class Empire:
         return self.__colonies_list.pop(weak_index), self.__colonies_cost_list.pop(weak_index)
 
     def collapse(self):
-        return self.__imperialist, self.__imperialist_cost
+        return self.__imperialist, [self.__imperialist_cost]
