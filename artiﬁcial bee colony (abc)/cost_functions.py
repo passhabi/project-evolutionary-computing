@@ -5,11 +5,12 @@ import numpy as np
 
 class CostFunction:
 
-    def __init__(self, dimensions, min_boundary, max_boundary):
+    def __init__(self, dimensions, min_boundary, max_boundary, name):
         self.__dimensions = dimensions
         # maximum and minimum of response boundary in each dimension:
         self.__min_boundary = min_boundary
         self.__max_boundary = max_boundary
+        self.__costFunction_name = name  # only a name for plotting
 
     @property
     def dimensions(self):
@@ -26,10 +27,9 @@ class CostFunction:
     def plot_solution(self, agent_row):
         raise NotImplementedError
 
-    @staticmethod
-    def plot_cost_iteration(costs):
+    def plot_cost_iteration(self, costs):
         plt.plot(costs)
-        plt.title('TSP')
+        plt.title(self.__costFunction_name)
         plt.xlabel('iteration')
         plt.ylabel('Cost')
         plt.show()
@@ -51,7 +51,7 @@ class Sphere(CostFunction):
 
     def __init__(self):
         # set Sphere parameters:
-        super().__init__(dimensions=5, min_boundary=-10, max_boundary=+10)
+        super().__init__(dimensions=5, min_boundary=-10, max_boundary=+10, name="Sphere")
 
     def compute_cost(self, agents_rows):
         agents_rows = agents_rows.reshape(-1, self.dimensions)
@@ -65,7 +65,7 @@ class Sphere(CostFunction):
 class NQueen(CostFunction):
 
     def __init__(self, num_of_queen: int = 8):
-        super().__init__(dimensions=num_of_queen, min_boundary=0, max_boundary=1)
+        super().__init__(dimensions=num_of_queen, min_boundary=0, max_boundary=1, name="N Queen")
 
     def plot_solution(self, agent_row: list):
         agent_row = np.argsort(agent_row)  # change coding representation to discrete number.
@@ -130,7 +130,7 @@ class NQueen(CostFunction):
 class TravellingSalesmanProblem(CostFunction):
 
     def __init__(self, num_of_cities: int = None, distance_range: int = None):
-        super().__init__(num_of_cities, min_boundary=0, max_boundary=1)
+        super().__init__(num_of_cities, min_boundary=0, max_boundary=1, name="TSP")
 
         # virtual distance between cites:
         self.x_axises = None
@@ -197,25 +197,53 @@ class TravellingSalesmanProblem(CostFunction):
         :return: cost of the given order.
         """
         # change coding representation to discrete number:
-        if len(agents_rows.shape) > 1:
-            agents_rows = np.argsort(agents_rows, axis=1)
-        else:
-            agents_rows = np.argsort(agents_rows)
 
         if self.distance_range is None:
-            raise Exception("There are no cities; Initialize distance_range on"
-                            "object definition whether use create_cities() function to make your own cities")
+            raise Exception("There are no cities; Initialize distance_range on "
+                            "object definition whether use create_cities() function to make your own cities.")
         cost = 0
-        # adding the first element to the last. e.g. 5 > 4 > 3 > [5].
-        agent = np.hstack((agents_rows, agents_rows[:, 0].reshape(-1, 1)))
-        # need a loop to travel to the first city.
 
-        agent = agent.astype(int)
-        for index in range(0, self.dimensions):
-            i = agent[:, index]  # distance of the first city to
-            ii = agent[:, index + 1]  # the second city is following:
-            cost += self.distance_matrix[i, ii]
+        one_agents = len(agents_rows.shape) == 1  # do we have just one agent? (agents_rows contain only one row?)
+
+        # adding the first element to the last. e.g. 5 > 4 > 3 > [5].
+        if one_agents:
+            agents_rows = np.argsort(agents_rows)
+            solution = np.append(agents_rows, agents_rows[0])
+
+            # need a loop to travel to the all cities:
+            solution = solution.astype(int)  # todo: remove this
+            for index in range(0, self.dimensions):
+                i = solution[index]  # distance of the first city to
+                ii = solution[index + 1]  # the second city is following:
+                cost += self.distance_matrix[i, ii]
+        else:
+            agents_rows = np.argsort(agents_rows, axis=1)
+            solution = np.hstack((agents_rows, agents_rows[:, 0].reshape(-1, 1)))
+
+            # need a loop to travel to the all cities:
+            solution = solution.astype(int)  # todo: remove this
+            for index in range(0, self.dimensions):
+                i = solution[:, index]  # distance of the first city to
+                ii = solution[:, index + 1]  # the second city is following:
+                cost += self.distance_matrix[i, ii]
+
         return cost
+
+    def get_print_solution(self, agents_rows, costs):
+        # change coding representation to discrete number:
+        # instead of decoding all the rows in agents_rows we only pass the the best one,
+        #   to take a weight off print_solution work.
+        index = np.argmin(costs)  # find the best agent's index.
+
+        agents_row = np.array(agents_rows[index]).flatten()
+        agents_row = np.argsort(agents_row)  # change the representation (decoding to discrete numbers).
+
+        cost = costs[index]
+
+        print("best founded solution is:")
+        print("position: ", agents_row)
+        print("with the cost: ", cost)
+        return agents_row
 
 
 """
