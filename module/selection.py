@@ -34,7 +34,7 @@ class RouletteWheelSelection(Selection):
 
         probability = nominator / denominator  # Cumulative probability vector
 
-        self.cdf = [probability[0]]  # add the the first element to the list.
+        self.cdf = [probability[0]]  # add the the first element to the cdf.
         for i in range(1, len(probability)):
             self.cdf.append(self.cdf[i - 1] + probability[i])  # Cumulative probability function
 

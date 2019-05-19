@@ -1,68 +1,75 @@
-import numpy as np
 import matplotlib.pyplot as plt
 from collections import Counter
+import numpy as np
+
 
 class CostFunction:
 
-    def __init__(self):
-        """
+    def __init__(self, dimensions, min_boundary, max_boundary):
+        self.__dimensions = dimensions
+        # maximum and minimum of response boundary in each dimension:
+        self.__min_boundary = min_boundary
+        self.__max_boundary = max_boundary
 
-        """
-        self.dimenstion = None
-        self.boundary = (None, None)
+    @property
+    def dimensions(self):
+        return self.__dimensions
 
-    def get_dimensions(self):
-        return self.dimensions
+    @property
+    def min_boundary(self):
+        return self.__min_boundary
 
-    def get_boundary(self):
-        return self.boundary
+    @property
+    def max_boundary(self):
+        return self.__max_boundary
 
     def plot_solution(self, agent_row):
         raise NotImplementedError
 
-    def compute_fitness(self, agent_row):
+    @staticmethod
+    def plot_cost_iteration(agents_rows, costs):
+        """
+
+        :param agents_rows:
+        :param costs:
+        :return:
+        """
+        plt.plot(costs)
+        plt.title('TSP')
+        plt.xlabel('iteration')
+        plt.ylabel('Cost')
+        plt.show()
+
+        # show the best founded solution:
+        costs = np.array(costs)
+        index = np.argmin(costs)
+        print("best founded solution is:")
+        print("positon: ", agents_rows[index])
+        print("with the cost: ", costs[index])
+
+    def compute_cost(self, agents_rows):
         raise NotImplementedError
 
 
 class Sphere(CostFunction):
-    """
-    by Hussein Asshabi
-    14 April 2019
-    """
 
     def __init__(self):
-        self.dimensions = 5
+        # set Sphere parameters:
+        super().__init__(dimensions=5, min_boundary=-10, max_boundary=+10)
 
-        # maximum and minimum of response boundary in each __dimension:
-        self.min_boundary = -10
-        self.max_boundary = +10
-
-    def compute_fitness(self, agent_row):
-        fitness = np.sum(agent_row ** 2, axis=1)
-        return fitness
+    def compute_cost(self, agents_rows):
+        agents_rows = agents_rows.reshape(-1, self.dimensions)
+        cost = np.sum(agents_rows ** 2, axis=1)
+        return cost
 
     def plot_solution(self, agent_row):
-        pass
-
+        raise Exception("there is not plot for Sphere problem.")
 
 
 class NQueen(CostFunction):
 
     def __init__(self, num_of_queen: int = 8):
-        self.dimensions = num_of_queen
-
-        # maximum and minimum of response boundary in each __dimension:
-        self.min_boundary = 0
-        self.max_boundary = num_of_queen
-
-    def get_dimensions(self):
-        return self.dimensions
-
-    def get_max_boundary(self):
-        return self.max_boundary
-
-    def get_min_boundary(self):
-        return self.min_boundary
+        super().__init__(dimensions=num_of_queen, min_boundary=0, max_boundary=1)
 
     def plot_solution(self, solution: list):
         size = len(solution)
@@ -75,14 +82,20 @@ class NQueen(CostFunction):
                     line += "⬜ "
             print(line)
 
-    def compute_fitness(self, agent_row):
-        fitness_list = []
-        for agent in agent_row:
-            # add computed fitness to the list of costs:
-            fitness_list.append(self.compute_cost_agent(agent))
-        return np.array(fitness_list)
+    def compute_cost(self, agents_rows):
 
-    def compute_cost_agent(self, chromosome):
+        if len(np.shape(agents_rows)) == 1:  # < if there is only one row in agents_rows, do>:
+            return self.compute_cost_of_1_agent(agents_rows)
+
+        costs = []
+        for agent in agents_rows:
+            # add computed fitness to the list of costs:
+            agent = np.argsort(agent)  # change coding representation to discrete number.
+            costs = np.append(costs, self.compute_cost_of_1_agent(agent))
+        return costs
+
+    @staticmethod
+    def compute_cost_of_1_agent(chromosome):
         # compute cost for an agent or chromosome
         cost = 0
         columns = [i + 1 for i in range(len(chromosome))]
@@ -99,13 +112,8 @@ class NQueen(CostFunction):
         return cost
 
 
-
-class TravellingSalesmanProblem(CostFunction):
-    """
-    by Hussein Asshabi
-    14 April 2019
-    """
-
+'''
+class TravellingSalesmanProblem(Problem):
     y_axises: list
     x_axises: list
 
@@ -206,3 +214,4 @@ class TravellingSalesmanProblem(CostFunction):
             cost += self.distance_matrix[i, ii]
 
         return cost
+'''
