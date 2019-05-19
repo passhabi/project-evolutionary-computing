@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="600d6a0b-20d4-4ff3-a7c4-0a9e7a06020a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../module/cost_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/cost_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../module/selection.py" beforeDir="false" afterPath="$PROJECT_DIR$/../module/selection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cost_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/cost_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="385">
+              <caret line="57" column="18" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -42,10 +43,31 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cost_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="353">
+              <caret line="209" lean-forward="true" selection-start-line="209" selection-end-line="209" />
               <folding>
-                <element signature="e#0#31#0" expanded="true" />
+                <element signature="e#1281#1687#0" />
+                <element signature="e#1309#1408#0" />
+                <element signature="e#1459#1581#0" />
+                <element signature="e#1631#1687#0" />
+                <element signature="e#1774#1847#0" />
+                <element signature="e#1903#2272#0" />
+                <element signature="e#2067#2272#0" />
+                <element signature="e#2134#2248#0" />
+                <element signature="e#2336#2938#0" />
+                <element signature="e#2336#2386#0" />
+                <element signature="e#2990#3523#0" />
+                <element signature="e#3294#3502#0" />
+                <element signature="e#3596#4141#0" />
+                <element signature="e#3809#4121#0" />
+                <element signature="e#3842#4121#0" />
+                <element signature="e#3877#4121#0" />
+                <element signature="e#4313#4714#0" />
+                <element signature="e#4512#4585#0" />
+                <element signature="e#4757#4988#0" />
+                <element signature="e#4898#6090#0" />
+                <element signature="e#6261#6341#0" />
+                <element signature="e#7776#8415#1" />
               </folding>
             </state>
           </provider>
@@ -60,6 +82,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>argmin</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -72,8 +99,8 @@
         <option value="$PROJECT_DIR$/problem.py" />
         <option value="$PROJECT_DIR$/cost_function.py" />
         <option value="$PROJECT_DIR$/selection_method.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="D:/educational/master’s degree/evolutionary computing/artiﬁcial bee colony (abc)/cost_functions.py" />
+        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/cost_functions.py" />
       </list>
     </option>
@@ -117,6 +144,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -168,9 +196,6 @@
       <module name="Artiﬁcial Bee Colony (ABC)" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -209,20 +234,21 @@
       <workItem from="1558234258484" duration="12766000" />
       <workItem from="1558252992348" duration="565000" />
       <workItem from="1558253607139" duration="3362000" />
-      <workItem from="1558257028925" duration="1433000" />
+      <workItem from="1558257028925" duration="10747000" />
+      <workItem from="1558276898475" duration="3206000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53886000" />
+    <option name="totallyTimeSpent" value="66406000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="916" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info auto_hide="true" content_ui="combo" id="Project" order="0" weight="0.254298" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Pylint" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32950193" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -231,35 +257,76 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32950193" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007163" side_tool="true" weight="0.23882504" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32950193" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="12" sideWeight="0.49928367" visible="true" weight="0.23882504" />
+      <window_info anchor="bottom" id="Pylint" order="10" sideWeight="0.50143266" side_tool="true" weight="0.23882504" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007163" side_tool="true" weight="0.23882504" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32950193" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="13" sideWeight="0.49856734" visible="true" weight="0.23882504" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" sideWeight="0.48825502" visible="true" weight="0.34455588" />
+      <window_info anchor="right" id="SciView" order="3" sideWeight="0.48657718" visible="true" weight="0.34455588" />
       <window_info anchor="right" id="Database" order="4" sideWeight="0.49832216" weight="0.3295129" />
-      <window_info anchor="right" x="0" y="0" width="314" height="676" id="Documentation" order="5" sideWeight="0.511745" side_tool="true" visible="true" weight="0.34455588" />
+      <window_info anchor="right" x="0" y="0" width="314" height="676" id="Documentation" order="5" sideWeight="0.51342285" side_tool="true" weight="0.34455588" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>21</line>
-          <option name="timeStamp" value="4" />
+          <url>file://$PROJECT_DIR$/cost_functions.py</url>
+          <line>131</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/articial_bee_colony__abc_$main.coverage" NAME="main Coverage Results" MODIFIED="1558255489343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/articial_bee_colony__abc_$main.coverage" NAME="main Coverage Results" MODIFIED="1558273114572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/idea.properties">
@@ -285,30 +352,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/abc_algorithm.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://C:/programdata/anaconda3/lib/site-packages/numpy/core/fromnumeric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://D:/educational/master’s degree/evolutionary computing/artiﬁcial bee colony (abc)/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="345">
+          <caret line="90" selection-start-line="90" selection-end-line="90" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/abc_algorithm.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://D:/educational/master’s degree/evolutionary computing/artiﬁcial bee colony (abc)/cost_functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="102" column="26" selection-start-line="102" selection-start-column="26" selection-end-line="102" selection-end-column="26" />
+        <state relative-caret-position="90">
+          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+          <folding>
+            <element signature="e#178#364#0" />
+            <element signature="e#414#438#0" />
+            <element signature="e#490#516#0" />
+            <element signature="e#568#594#0" />
+            <element signature="e#644#669#0" />
+            <element signature="e#2844#3377#0" />
+            <element signature="e#3450#3995#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/lib/site-packages/numpy/core/fromnumeric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="385">
+          <caret line="57" column="18" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
@@ -317,10 +407,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cost_functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="353">
+          <caret line="209" lean-forward="true" selection-start-line="209" selection-end-line="209" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#1281#1687#0" />
+            <element signature="e#1309#1408#0" />
+            <element signature="e#1459#1581#0" />
+            <element signature="e#1631#1687#0" />
+            <element signature="e#1774#1847#0" />
+            <element signature="e#1903#2272#0" />
+            <element signature="e#2067#2272#0" />
+            <element signature="e#2134#2248#0" />
+            <element signature="e#2336#2938#0" />
+            <element signature="e#2336#2386#0" />
+            <element signature="e#2990#3523#0" />
+            <element signature="e#3294#3502#0" />
+            <element signature="e#3596#4141#0" />
+            <element signature="e#3809#4121#0" />
+            <element signature="e#3842#4121#0" />
+            <element signature="e#3877#4121#0" />
+            <element signature="e#4313#4714#0" />
+            <element signature="e#4512#4585#0" />
+            <element signature="e#4757#4988#0" />
+            <element signature="e#4898#6090#0" />
+            <element signature="e#6261#6341#0" />
+            <element signature="e#7776#8415#1" />
           </folding>
         </state>
       </provider>

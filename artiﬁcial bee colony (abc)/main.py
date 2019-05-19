@@ -29,7 +29,7 @@ def flying_to_food_source(i):
 
 
 # initialize:
-cost = NQueen()  # The problem to solve!
+cost = NQueen(20)  # The problem to solve!
 max_iteration = 200
 
 swarm_size = 20
@@ -51,8 +51,16 @@ top_food_source = pd.DataFrame({'index': index,
 # top_food_source.get_values()[-1][-1]
 'main loop:'
 limits = np.array([limit] * swarm_size)  # for each food source we have a limit.
-for iteration in range(max_iteration):
 
+# <use following code for while loop instead of for loop>:
+iteration = 0
+threshold = 4
+best_cost = np.inf
+while best_cost > threshold:
+    iteration += 1
+# <end>
+
+# for iteration in range(max_iteration):
     #  (a) Place the employed bees on the food sources in the memory:
     # send employed bee to food sources that scout bee found (note that we didn't define
     #   scout bees and we treat employed bee as both scout and employed bee):
@@ -87,6 +95,12 @@ for iteration in range(max_iteration):
                                               'position': [employees[index]],
                                               'cost': employees_cost[index]}, ignore_index=True)
 
-cost.plot_cost_iteration(top_food_source.position, top_food_source.cost)
+    # <use following code for while loop instead of for loop>:
+    best_cost = min(employees_cost)
+    # <end>
+
+cost.plot_cost_iteration(top_food_source.cost)
+solution = cost.get_print_solution(top_food_source.position, top_food_source.cost)
+cost.plot_solution(solution)
 # this algorithm it doesnt fall into local minimal.
 # it dose exploration and exploitation at the same time.
