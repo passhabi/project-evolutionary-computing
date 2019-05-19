@@ -24,7 +24,27 @@ class CostFunction:
     def max_boundary(self):
         return self.__max_boundary
 
-    def plot_solution(self, agent_row):
+    @staticmethod
+    def get_print_solution(agents_rows, costs):
+        """
+        Print the founded solution so far and return it.
+        :param agents_rows: chromosome list.
+        :param costs: fitness list.
+        :return: an agent_row (chromosome).
+        """
+        # show the best founded solution:
+        index = np.argmin(costs)
+        print("best founded solution is:")
+        print("position: ", agents_rows[index])
+        print("with the cost: ", costs[index])
+        return agents_rows[index]
+
+    def plot_solution(self, solution):
+        """
+
+        :param solution: solution got by get_print_solution method. its a agent_row or (chromosome)
+        :return:
+        """
         raise NotImplementedError
 
     def plot_cost_iteration(self, costs):
@@ -33,15 +53,6 @@ class CostFunction:
         plt.xlabel('iteration')
         plt.ylabel('Cost')
         plt.show()
-
-    @staticmethod
-    def get_print_solution(agents_rows, costs: []):
-        # show the best founded solution:
-        index = np.argmin(costs)
-        print("best founded solution is:")
-        print("position: ", agents_rows[index])
-        print("with the cost: ", costs[index])
-        return agents_rows[index]
 
     def compute_cost(self, agents_rows):
         raise NotImplementedError
@@ -58,7 +69,7 @@ class Sphere(CostFunction):
         cost = np.sum(agents_rows ** 2, axis=1)
         return cost
 
-    def plot_solution(self, agent_row):
+    def plot_solution(self, solution):
         raise Exception("there is not plot for Sphere problem.")
 
 
@@ -66,19 +77,6 @@ class NQueen(CostFunction):
 
     def __init__(self, num_of_queen: int = 8):
         super().__init__(dimensions=num_of_queen, min_boundary=0, max_boundary=1, name="N Queen")
-
-    def plot_solution(self, agent_row: list):
-        agent_row = np.argsort(agent_row)  # change coding representation to discrete number.
-
-        size = len(agent_row)
-        for row in range(1, size):
-            line = "  "
-            for col in range(1, size):
-                if agent_row[row] == col:
-                    line += "👑 "
-                else:
-                    line += "⬜ "
-            print(line)
 
     def get_print_solution(self, agents_rows, costs):
         # change coding representation to discrete number:
@@ -95,6 +93,22 @@ class NQueen(CostFunction):
         print("position: ", agents_row)
         print("with the cost: ", cost)
         return agents_row
+
+    def plot_solution(self, solution: list):
+        """
+        Show a representation of N Queen problem with the given solution.
+        :param solution: solution got by get_print_solution method. its a agent_row or (chromosome)
+        :return:
+        """
+        size = len(solution)
+        for row in range(size):
+            line = "  "
+            for col in range(size):
+                if solution[row] == col:
+                    line += "👑 "
+                else:
+                    line += "⬜ "
+            print(line)
 
     def compute_cost(self, agents_rows):
 
@@ -172,13 +186,37 @@ class TravellingSalesmanProblem(CostFunction):
         plt.scatter(self.cities[0, :], self.cities[1, :], marker='o')
         plt.show()
 
-    def plot_solution(self, agent_row):
+    def get_print_solution(self, agents_rows, costs):
+        """
+
+        :param agents_rows:
+        :param costs:
+        :return: The found solution so far.
+        """
         # change coding representation to discrete number:
-        agent_row = np.argsort(agent_row)
+        # instead of decoding all the rows in agents_rows we only pass the the best one,
+        #   to take a weight off print_solution work.
+        index = np.argmin(costs)  # find the best agent's index.
 
-        agent_row = np.append(agent_row, agent_row[0])  # adding the first element to the last. e.g. 5 > 4 > 3 > [5].
+        agents_row = np.array(agents_rows[index]).flatten()
+        agents_row = np.argsort(agents_row)  # change the representation (decoding to discrete numbers).
 
-        agent_row = agent_row.astype(int)
+        cost = costs[index]
+
+        print("best founded solution is:")
+        print("position: ", agents_row)
+        print("with the cost: ", cost)
+        return agents_row
+
+    def plot_solution(self, solution):
+        """
+        Show a representation of TSP problem with the given solution.
+        :param solution: solution got by get_print_solution method. its a agent_row or (chromosome)
+        :return:
+        """
+        solution = np.append(solution, solution[0])  # adding the first element to the last. e.g. 5 > 4 > 3 > [5].
+
+        solution = solution.astype(int)
 
         plt.scatter(self.cities[0, :], self.cities[1, :], marker='o')
         # annotate_cities = np.arange(1, self.dimensions + 1)
@@ -187,7 +225,7 @@ class TravellingSalesmanProblem(CostFunction):
         # for num in annotate_cities:
         #     aplot.annotate(num, (self.cities[0, num], self.cities[1, num]))
 
-        plt.plot(self.cities[0, agent_row], self.cities[1, agent_row])
+        plt.plot(self.cities[0, solution], self.cities[1, solution])
         plt.show()
 
     def compute_cost(self, agents_rows):
@@ -228,23 +266,6 @@ class TravellingSalesmanProblem(CostFunction):
                 cost += self.distance_matrix[i, ii]
 
         return cost
-
-    def get_print_solution(self, agents_rows, costs):
-        # change coding representation to discrete number:
-        # instead of decoding all the rows in agents_rows we only pass the the best one,
-        #   to take a weight off print_solution work.
-        index = np.argmin(costs)  # find the best agent's index.
-
-        agents_row = np.array(agents_rows[index]).flatten()
-        agents_row = np.argsort(agents_row)  # change the representation (decoding to discrete numbers).
-
-        cost = costs[index]
-
-        print("best founded solution is:")
-        print("position: ", agents_row)
-        print("with the cost: ", cost)
-        return agents_row
-
 
 """
     def create_cities(self, x: list, y: list):
