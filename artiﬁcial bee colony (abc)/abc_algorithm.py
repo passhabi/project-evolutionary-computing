@@ -15,16 +15,16 @@ class ArtificialBeeColony:
 
         self.limit = self.n_onlookers * self.cost_func.dimensions  # If a solution representing a food source
         #   is not improved by a predetermined number of trials, then that food source is abandoned by its employed bee.
-        self.limits = np.array([self.limit] * swarm_size)  # for each food source we have a limit.
+        self.limits = np.array([self.limit] * self.n_employed)  # for each food source we have a limit.
 
         # make the initialize population (send scout bees to find the food sources):
         self.employees = np.random.uniform(low=self.cost_func.min_boundary, high=self.cost_func.max_boundary,
-                                           size=[self.swarm_size, self.cost_func.dimensions])
+                                           size=[self.n_employed, self.cost_func.dimensions])
         self.employees_cost = self.cost_func.compute_cost(self.employees)  # compute cost(fitness) of the employee bees.
 
         # to keep track and saving the best solution, we define the following:
         index = np.argmin(self.employees_cost)  # take the index of the best cost.
-        self.top_food_source = pd.DataFrame({'index': index,
+        self.top_food_sources = pd.DataFrame({'index': index,
                                              'position': [self.employees[index]],
                                              'cost': self.employees_cost[index]})
 
@@ -74,13 +74,13 @@ class ArtificialBeeColony:
                 self.employees_cost[i] = self.cost_func.compute_cost(self.employees[i])
 
         index = np.argmin(self.employees_cost)  # take the index of the best cost.
-        self.top_food_source = self.top_food_source.append({'index': index,
+        self.top_food_sources = self.top_food_sources.append({'index': index,
                                                             'position': [self.employees[index]],
                                                             'cost': self.employees_cost[index]}, ignore_index=True)
 
     def show_results(self):
-        self.cost_func.plot_cost_iteration(self.top_food_source.cost)
-        solution = self.cost_func.get_print_solution(self.top_food_source.position, self.top_food_source.cost)
+        self.cost_func.plot_cost_iteration(self.top_food_sources.cost)
+        solution = self.cost_func.get_print_solution(self.top_food_sources.position, self.top_food_sources.cost)
         self.cost_func.plot_solution(solution)
 
     def flying_to_food_source(self, i):
