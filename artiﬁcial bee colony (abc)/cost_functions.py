@@ -121,19 +121,18 @@ class NQueen(CostFunction):
             costs = np.append(costs, self.compute_cost_of_1_agent(agent))
         return costs
 
-    @staticmethod
-    def compute_cost_of_1_agent(agent_row):
+    def compute_cost_of_1_agent(self, agent_row):
         # compute cost for an agent or chromosome
 
-        n = len(agent_row)
-        x = list(range(0, n))
+        x = list(range(self.dimensions))
         y = np.argsort(agent_row)  # change coding representation to discrete number.
-        z = 0
-        for i in range(n-1):
-            for j in range(i + 1, n):
+
+        cost = 0
+        for i in range(self.dimensions-1):
+            for j in range(i + 1, self.dimensions):
                 if np.abs(x[i] - x[j]) == np.abs(y[i] - y[j]):
-                    z = z+1
-        return z
+                    cost = cost+1
+        return cost
 
 
 class TravellingSalesmanProblem(CostFunction):
