@@ -25,8 +25,8 @@ class ArtificialBeeColony:
         # to keep track and saving the best solution, we define the following:
         index = np.argmin(self.employees_cost)  # take the index of the best cost.
         self.top_food_sources = pd.DataFrame({'index': index,
-                                             'position': [self.employees[index]],
-                                             'cost': self.employees_cost[index]})
+                                              'position': [self.employees[index]],
+                                              'cost': self.employees_cost[index]})
 
     def place_employed_bees(self):
         """
@@ -62,7 +62,7 @@ class ArtificialBeeColony:
 
     def send_scout_to_search(self):
         """
-        # (c) Send the scouts to the search area for discovering new food sources.
+        # (c) Send the scouts to the search area to discovering new food sources.
 
         :return:
         """
@@ -73,10 +73,11 @@ class ArtificialBeeColony:
                                                       self.cost_func.dimensions)  # find another food source.
                 self.employees_cost[i] = self.cost_func.compute_cost(self.employees[i])
 
+    def store_best_iteration_foodsource(self):
         index = np.argmin(self.employees_cost)  # take the index of the best cost.
         self.top_food_sources = self.top_food_sources.append({'index': index,
-                                                            'position': [self.employees[index]],
-                                                            'cost': self.employees_cost[index]}, ignore_index=True)
+                                                              'position': [self.employees[index]],
+                                                              'cost': self.employees_cost[index]}, ignore_index=True)
 
     def show_results(self):
         self.cost_func.plot_cost_iteration(self.top_food_sources.cost)

@@ -113,32 +113,27 @@ class NQueen(CostFunction):
     def compute_cost(self, agents_rows):
 
         if len(np.shape(agents_rows)) == 1:  # < if there is only one row in agents_rows, do>:
-            agent = np.argsort(agents_rows)  # change coding representation to discrete number.
-            return self.compute_cost_of_1_agent(agent)
+            return self.compute_cost_of_1_agent(agents_rows)
 
         costs = []
         for agent in agents_rows:
             # add computed fitness to the list of costs:
-            agent = np.argsort(agent)  # change coding representation to discrete number.
             costs = np.append(costs, self.compute_cost_of_1_agent(agent))
         return costs
 
     @staticmethod
-    def compute_cost_of_1_agent(chromosome):
+    def compute_cost_of_1_agent(agent_row):
         # compute cost for an agent or chromosome
-        cost = 0
-        columns = [i + 1 for i in range(len(chromosome))]
-        rows = [j + 1 for j in range(len(chromosome))]
 
-        for col in columns:
-            for row in rows:
-                if col != row:
-                    # if there is a hit:
-                    if chromosome[col - 1] == chromosome[row - 1]:
-                        cost += 1
-                    if abs(col - row) == abs(chromosome[col - 1] - chromosome[row - 1]):
-                        cost += 1
-        return cost
+        n = len(agent_row)
+        x = list(range(0, n))
+        y = np.argsort(agent_row)  # change coding representation to discrete number.
+        z = 0
+        for i in range(n-1):
+            for j in range(i + 1, n):
+                if np.abs(x[i] - x[j]) == np.abs(y[i] - y[j]):
+                    z = z+1
+        return z
 
 
 class TravellingSalesmanProblem(CostFunction):
@@ -266,6 +261,7 @@ class TravellingSalesmanProblem(CostFunction):
                 cost += self.distance_matrix[i, ii]
 
         return cost
+
 
 """
     def create_cities(self, x: list, y: list):

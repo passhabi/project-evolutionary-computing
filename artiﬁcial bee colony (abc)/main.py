@@ -7,7 +7,7 @@ cost_func = NQueen(10)
 # cost_func = TravellingSalesmanProblem(5, 200)  # The problem to solve!
 artificialBeeColony = ArtificialBeeColony(cost_func, 50)
 
-max_iteration = 200
+max_iteration = 50
 
 # <1><use following code for while loop instead of for loop>:
 # iteration = 0
@@ -27,6 +27,7 @@ for iteration in range(max_iteration):
     # (c) Send the scouts to the search area for discovering new food sources:
     artificialBeeColony.send_scout_to_search()
 
+    artificialBeeColony.store_best_iteration_foodsource()
     # <1><use following code for while loop instead of for loop>:
     # best_cost = min(employees_cost)
     # <1><end>

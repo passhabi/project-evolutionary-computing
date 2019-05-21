@@ -4,6 +4,7 @@
     <list default="true" id="600d6a0b-20d4-4ff3-a7c4-0a9e7a06020a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/abc_algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/abc_algorithm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cost_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/cost_functions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,86 +29,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cost_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="23" column="53" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
+            <state relative-caret-position="492">
+              <caret line="132" column="37" selection-start-line="132" selection-start-column="37" selection-end-line="132" selection-end-column="37" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#110#1669#0" />
+                <element signature="e#184#438#0" />
+                <element signature="e#488#512#0" />
+                <element signature="e#564#590#0" />
+                <element signature="e#642#668#0" />
+                <element signature="e#744#1188#0" />
+                <element signature="e#744#941#1" />
+                <element signature="e#1237#1404#0" />
+                <element signature="e#1237#1370#1" />
+                <element signature="e#1456#1593#0" />
+                <element signature="e#1644#1669#0" />
+                <element signature="e#1705#2125#0" />
+                <element signature="e#1733#1847#0" />
+                <element signature="e#1898#2020#0" />
+                <element signature="e#2069#2125#0" />
+                <element signature="e#2212#2301#0" />
+                <element signature="e#2365#2415#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="uml://Python/#D:/Educational/Master’s degree/Evolutionary Computing/artiﬁcial bee colony (abc)/main.py">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>Python</ID>
-              <OriginalElement>#D:/Educational/Master’s degree/Evolutionary Computing/artiﬁcial bee colony (abc)/main.py</OriginalElement>
-              <nodes>
-                <node x="0.0" y="677.0">abc_algorithm.ArtificialBeeColony</node>
-                <node x="0.0" y="440.5">cost_functions.Sphere</node>
-                <node x="496.0" y="341.0">cost_functions.TravellingSalesmanProblem</node>
-                <node x="221.0" y="418.5">cost_functions.NQueen</node>
-                <node x="168.5" y="0.0">cost_functions.CostFunction</node>
-              </nodes>
-              <notes />
-              <edges>
-                <edge source="cost_functions.Sphere" target="cost_functions.CostFunction">
-                  <point x="0.0" y="-46.0" />
-                  <point x="100.5" y="316.0" />
-                  <point x="228.5" y="316.0" />
-                  <point x="-120.0" y="145.5" />
-                </edge>
-                <edge source="cost_functions.NQueen" target="cost_functions.CostFunction">
-                  <point x="0.0" y="-68.0" />
-                  <point x="0.0" y="145.5" />
-                </edge>
-                <edge source="cost_functions.TravellingSalesmanProblem" target="cost_functions.CostFunction">
-                  <point x="0.0" y="-145.5" />
-                  <point x="687.0" y="316.0" />
-                  <point x="468.5" y="316.0" />
-                  <point x="120.0" y="145.5" />
-                </edge>
-              </edges>
-              <settings layout="Hierarchic Group" zoom="0.5664136622390892" x="-304.2730318257957" y="413.71859296482415" />
-              <SelectedNodes>
-                <node>abc_algorithm.ArtificialBeeColony</node>
-              </SelectedNodes>
-              <Categories>
-                <Category>Fields</Category>
-                <Category>Inner Classes</Category>
-                <Category>Methods</Category>
-              </Categories>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/abc_algorithm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="14" selection-start-line="8" selection-end-line="28" selection-end-column="81" />
-              <folding>
-                <element signature="e#1415#1594#0" />
-                <element signature="e#1640#2013#0" />
-                <element signature="e#1640#1922#1" />
-                <element signature="e#2058#2928#0" />
-                <element signature="e#2058#2450#1" />
-                <element signature="e#2460#2491#0" />
-                <element signature="e#2974#3969#0" />
-                <element signature="e#2974#3090#1" />
-                <element signature="e#3144#3596#0" />
-                <element signature="e#3237#3596#0" />
-                <element signature="e#3740#3949#0" />
-                <element signature="e#4007#4226#0" />
-                <element signature="e#4276#5540#0" />
-                <element signature="e#4411#4493#0" />
-                <element signature="e#4910#5172#0" />
-                <element signature="e#5340#5449#0" />
-              </folding>
+            <state relative-caret-position="304">
+              <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -139,9 +93,9 @@
         <option value="$PROJECT_DIR$/cost_function.py" />
         <option value="$PROJECT_DIR$/selection_method.py" />
         <option value="D:/educational/master’s degree/evolutionary computing/artiﬁcial bee colony (abc)/cost_functions.py" />
-        <option value="$PROJECT_DIR$/cost_functions.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/abc_algorithm.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/cost_functions.py" />
       </list>
     </option>
   </component>
@@ -157,10 +111,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1374" />
-    <option name="y" value="130" />
-    <option name="width" value="1382" />
-    <option name="height" value="784" />
+    <option name="x" value="164" />
+    <option name="y" value="-13" />
+    <option name="width" value="1044" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -236,9 +190,6 @@
       <module name="Artiﬁcial Bee Colony (ABC)" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -247,8 +198,8 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="true" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
@@ -280,22 +231,24 @@
       <workItem from="1558257028925" duration="10747000" />
       <workItem from="1558276898475" duration="13865000" />
       <workItem from="1558293075359" duration="957000" />
-      <workItem from="1558333495137" duration="8001000" />
+      <workItem from="1558333495137" duration="22074000" />
+      <workItem from="1558410175783" duration="1567000" />
+      <workItem from="1558450164361" duration="3733000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86023000" />
+    <option name="totallyTimeSpent" value="105396000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1374" y="130" width="1382" height="784" extended-state="6" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info auto_hide="true" content_ui="combo" id="Project" order="0" weight="0.25416037" />
+      <window_info auto_hide="true" content_ui="combo" id="Project" order="0" weight="0.25358167" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32950193" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32872504" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.33971903" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -306,14 +259,14 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Pylint" order="10" sideWeight="0.50143266" side_tool="true" weight="0.23882504" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007163" side_tool="true" weight="0.23882504" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32950193" />
-      <window_info anchor="bottom" id="Python Console" order="13" sideWeight="0.49856734" weight="0.33844188" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32872504" />
+      <window_info anchor="bottom" id="Python Console" order="13" sideWeight="0.49856734" weight="0.95962316" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" sideWeight="0.48657718" weight="0.32020056" />
+      <window_info anchor="right" id="SciView" order="3" sideWeight="0.4845222" visible="true" weight="0.3667622" />
       <window_info anchor="right" id="Database" order="4" sideWeight="0.49832216" weight="0.3295129" />
-      <window_info anchor="right" x="0" y="0" width="314" height="676" id="Documentation" order="5" sideWeight="0.51342285" side_tool="true" weight="0.3441755" />
+      <window_info anchor="right" x="0" y="0" width="314" height="676" id="Documentation" order="5" sideWeight="0.5154778" side_tool="true" visible="true" weight="0.3667622" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -426,61 +379,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cost_functions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="91" column="42" lean-forward="true" selection-start-line="91" selection-start-column="42" selection-end-line="91" selection-end-column="42" />
-          <folding>
-            <element signature="e#184#438#0" />
-            <element signature="e#488#512#0" />
-            <element signature="e#564#590#0" />
-            <element signature="e#642#668#0" />
-            <element signature="e#1237#1404#0" />
-            <element signature="e#1237#1370#1" />
-            <element signature="e#1456#1593#0" />
-            <element signature="e#1644#1669#0" />
-            <element signature="e#1733#1847#0" />
-            <element signature="e#1898#2020#0" />
-            <element signature="e#2069#2125#0" />
-            <element signature="e#2212#2301#0" />
-            <element signature="e#2365#2415#0" />
-            <element signature="e#3022#3228#1" />
-            <element signature="e#3366#3479#0" />
-            <element signature="e#3555#4088#0" />
-            <element signature="e#3654#3792#0" />
-            <element signature="e#3859#4067#0" />
-            <element signature="e#4161#4706#0" />
-            <element signature="e#4374#4686#0" />
-            <element signature="e#4407#4686#0" />
-            <element signature="e#4442#4686#0" />
-            <element signature="e#4761#10134#0" />
-            <element signature="e#4844#5199#0" />
-            <element signature="e#5073#5146#0" />
-            <element signature="e#5242#5473#0" />
-            <element signature="e#5517#6709#0" />
-            <element signature="e#5861#6538#0" />
-            <element signature="e#5944#6538#0" />
-            <element signature="e#6184#6203#0" />
-            <element signature="e#6746#6826#0" />
-            <element signature="e#6890#7611#0" />
-            <element signature="e#6890#7000#1" />
-            <element signature="e#7009#7059#0" />
-            <element signature="e#7660#8398#0" />
-            <element signature="e#7660#7862#1" />
-            <element signature="e#8098#8151#0" />
-            <element signature="e#8449#10134#0" />
-            <element signature="e#8449#8586#1" />
-            <element signature="e#8699#8878#0" />
-            <element signature="e#8715#8877#0" />
-            <element signature="e#9118#9585#0" />
-            <element signature="e#9407#9585#0" />
-            <element signature="e#9612#10113#0" />
-            <element signature="e#9929#10113#0" />
-            <element signature="e#10136#10775#1" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://JavaScript-modules-diagram/D:/Educational/Master’s degree/Evolutionary Computing/artiﬁcial bee colony (abc)">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -489,11 +387,12 @@
           <nodes />
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="661.0" y="298.5" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="661.0" y="299.0" />
           <SelectedNodes />
           <Categories>
             <Category>All</Category>
           </Categories>
+          <SCOPE>All</SCOPE>
           <VISIBILITY>Details</VISIBILITY>
         </state>
       </provider>
@@ -506,9 +405,10 @@
           <nodes />
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="661.0" y="298.5" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="661.0" y="299.0" />
           <SelectedNodes />
           <Categories />
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
@@ -527,19 +427,10 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="129.5" y="51.0" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="130.0" y="51.0" />
           <SelectedNodes />
           <Categories />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="23" column="53" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
@@ -549,64 +440,64 @@
           <ID>Python</ID>
           <OriginalElement>#D:/Educational/Master’s degree/Evolutionary Computing/artiﬁcial bee colony (abc)/main.py</OriginalElement>
           <nodes>
-            <node x="0.0" y="677.0">abc_algorithm.ArtificialBeeColony</node>
-            <node x="0.0" y="440.5">cost_functions.Sphere</node>
-            <node x="496.0" y="341.0">cost_functions.TravellingSalesmanProblem</node>
-            <node x="221.0" y="418.5">cost_functions.NQueen</node>
-            <node x="168.5" y="0.0">cost_functions.CostFunction</node>
+            <node x="" y="">abc_algorithm.ArtificialBeeColony</node>
+            <node x="" y="">cost_functions.Sphere</node>
+            <node x="" y="">cost_functions.TravellingSalesmanProblem</node>
+            <node x="" y="">cost_functions.NQueen</node>
+            <node x="" y="">cost_functions.CostFunction</node>
           </nodes>
           <notes />
-          <edges>
-            <edge source="cost_functions.Sphere" target="cost_functions.CostFunction">
-              <point x="0.0" y="-46.0" />
-              <point x="100.5" y="316.0" />
-              <point x="228.5" y="316.0" />
-              <point x="-120.0" y="145.5" />
-            </edge>
-            <edge source="cost_functions.NQueen" target="cost_functions.CostFunction">
-              <point x="0.0" y="-68.0" />
-              <point x="0.0" y="145.5" />
-            </edge>
-            <edge source="cost_functions.TravellingSalesmanProblem" target="cost_functions.CostFunction">
-              <point x="0.0" y="-145.5" />
-              <point x="687.0" y="316.0" />
-              <point x="468.5" y="316.0" />
-              <point x="120.0" y="145.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.5664136622390892" x="-304.2730318257957" y="413.71859296482415" />
-          <SelectedNodes>
-            <node>abc_algorithm.ArtificialBeeColony</node>
-          </SelectedNodes>
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.6403345724907064" x="439.0" y="528.0" />
+          <SelectedNodes />
           <Categories>
-            <Category>Fields</Category>
-            <Category>Inner Classes</Category>
             <Category>Methods</Category>
+            <Category>Inner Classes</Category>
+            <Category>Fields</Category>
           </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/abc_algorithm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="14" selection-start-line="8" selection-end-line="28" selection-end-column="81" />
+        <state relative-caret-position="304">
+          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cost_functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="132" column="37" selection-start-line="132" selection-start-column="37" selection-end-line="132" selection-end-column="37" />
           <folding>
-            <element signature="e#1415#1594#0" />
-            <element signature="e#1640#2013#0" />
-            <element signature="e#1640#1922#1" />
-            <element signature="e#2058#2928#0" />
-            <element signature="e#2058#2450#1" />
-            <element signature="e#2460#2491#0" />
-            <element signature="e#2974#3969#0" />
-            <element signature="e#2974#3090#1" />
-            <element signature="e#3144#3596#0" />
-            <element signature="e#3237#3596#0" />
-            <element signature="e#3740#3949#0" />
-            <element signature="e#4007#4226#0" />
-            <element signature="e#4276#5540#0" />
-            <element signature="e#4411#4493#0" />
-            <element signature="e#4910#5172#0" />
-            <element signature="e#5340#5449#0" />
+            <element signature="e#110#1669#0" />
+            <element signature="e#184#438#0" />
+            <element signature="e#488#512#0" />
+            <element signature="e#564#590#0" />
+            <element signature="e#642#668#0" />
+            <element signature="e#744#1188#0" />
+            <element signature="e#744#941#1" />
+            <element signature="e#1237#1404#0" />
+            <element signature="e#1237#1370#1" />
+            <element signature="e#1456#1593#0" />
+            <element signature="e#1644#1669#0" />
+            <element signature="e#1705#2125#0" />
+            <element signature="e#1733#1847#0" />
+            <element signature="e#1898#2020#0" />
+            <element signature="e#2069#2125#0" />
+            <element signature="e#2212#2301#0" />
+            <element signature="e#2365#2415#0" />
           </folding>
         </state>
       </provider>
