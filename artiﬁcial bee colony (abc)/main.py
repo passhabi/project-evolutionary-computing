@@ -3,11 +3,11 @@ from abc_algorithm import ArtificialBeeColony
 
 
 # initialize:
-cost_func = NQueen(10)
+cost_func = NQueen()
 # cost_func = TravellingSalesmanProblem(5, 200)  # The problem to solve!
 artificialBeeColony = ArtificialBeeColony(cost_func, 50)
 
-max_iteration = 50
+max_iteration = 200
 
 # <1><use following code for while loop instead of for loop>:
 # iteration = 0
@@ -28,11 +28,12 @@ for iteration in range(max_iteration):
     artificialBeeColony.send_scout_to_search()
 
     artificialBeeColony.store_best_iteration_foodsource()
+
     # <1><use following code for while loop instead of for loop>:
     # best_cost = min(employees_cost)
     # <1><end>
 
-artificialBeeColony.show_results()
+artificialBeeColony.print_overall_result()
 
 
 # this algorithm it doesnt fall into local minimal.

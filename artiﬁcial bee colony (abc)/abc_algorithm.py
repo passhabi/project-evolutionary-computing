@@ -24,9 +24,14 @@ class ArtificialBeeColony:
 
         # to keep track and saving the best solution, we define the following:
         index = np.argmin(self.employees_cost)  # take the index of the best cost.
-        self.top_food_sources = pd.DataFrame({'index': index,
-                                              'position': [self.employees[index]],
-                                              'cost': self.employees_cost[index]})
+        # self.top_food_sources = pd.DataFrame({'index': index,
+        #                                       'position': np.array(self.employees[index]),
+        #                                       'cost': self.employees_cost[index]}, )
+        self.top_food_sources = pd.DataFrame(columns=['index', 'position', 'cost'])
+        self.top_food_sources = self.top_food_sources.append({'index': index,
+                                                              'position': self.employees[index],
+                                                              'cost': self.employees_cost[index]}, ignore_index=True)
+
 
     def place_employed_bees(self):
         """
@@ -76,13 +81,23 @@ class ArtificialBeeColony:
     def store_best_iteration_foodsource(self):
         index = np.argmin(self.employees_cost)  # take the index of the best cost.
         self.top_food_sources = self.top_food_sources.append({'index': index,
-                                                              'position': [self.employees[index]],
+                                                              'position': self.employees[index],
                                                               'cost': self.employees_cost[index]}, ignore_index=True)
 
-    def show_results(self):
-        self.cost_func.plot_cost_iteration(self.top_food_sources.cost)
-        solution = self.cost_func.get_print_solution(self.top_food_sources.position, self.top_food_sources.cost)
-        self.cost_func.plot_solution(solution)
+    def print_step_result(self):
+        self.cost_func.print_step_result(self.top_food_sources['position'][len(self.top_food_sources) - 1])
+
+    def print_overall_result(self):
+        """
+        Print best solution with its cost. This is used in the end of Iterations.
+        """
+        costs = self.cost_func.plot_cost_vs_iteration(self.top_food_sources['cost'])
+
+        print("Best founded solution is:")
+        idx_best = np.argmin(costs)
+        self.cost_func.print_step_result(self.top_food_sources.position[idx_best], idx_best)
+
+        self.cost_func.visual_result(self.top_food_sources.position[idx_best][:])
 
     def flying_to_food_source(self, i):
         # choose a random food source j ≠ k:

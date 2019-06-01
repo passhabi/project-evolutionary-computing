@@ -1,9 +1,12 @@
 import matplotlib.pyplot as plt
-from collections import Counter
 import numpy as np
 
 
 class CostFunction:
+    """
+    note:
+    we call a chromosome, solution vector.
+    """
 
     def __init__(self, dimensions, min_boundary, max_boundary, name):
         self.__dimensions = dimensions
@@ -25,37 +28,45 @@ class CostFunction:
         return self.__max_boundary
 
     @staticmethod
-    def get_print_solution(agents_rows, costs):
+    def _discrete_decoding(original_function):
         """
-        Print the founded solution so far and return it.
-        :param agents_rows: chromosome list.
-        :param costs: fitness list.
-        :return: an agent_row (chromosome).
-        """
-        # show the best founded solution:
-        index = np.argmin(costs)
-        print("best founded solution is:")
-        print("position: ", agents_rows[index])
-        print("with the cost: ", costs[index])
-        return agents_rows[index]
+        Decorator function that decode continues space to discrete space by sorting.
+        for example consider given solution_vector [5.1, 6.3, 4.008, 9.1, 6.02] to the original function.
 
-    def plot_solution(self, solution):
+        This decorator make the original function to work with discrete version of the given solution_vector which in this
+        example is [2 0 4 1 3].
+        This can be used in discrete problems like N-Queen or TSP.
         """
 
-        :param solution: solution got by get_print_solution method. its a agent_row or (chromosome)
-        :return:
-        """
+        def wrapper(self, solution_vectors: np.ndarray, *args, **kwargs):
+            # todo: reshape the data.
+            if len(solution_vectors.shape) > 1:
+                solution_vectors = np.argsort(solution_vectors, axis=1).reshape(-1, self.dimensions)
+            else:
+                solution_vectors = np.argsort(solution_vectors).reshape(1, self.dimensions).flatten()
+            return original_function(self, solution_vectors, *args, **kwargs)
+        return wrapper
+
+    def compute_cost(self, solution_vectors):
         raise NotImplementedError
 
-    def plot_cost_iteration(self, costs):
+    def visual_result(self, solution_vector):
+        raise NotImplementedError
+
+    def plot_cost_vs_iteration(self, costs):
         plt.plot(costs)
         plt.title(self.__costFunction_name)
         plt.xlabel('iteration')
         plt.ylabel('Cost')
         plt.show()
 
-    def compute_cost(self, agents_rows):
-        raise NotImplementedError
+    def print_step_result(self, solution_vector, iteration: int = ""):
+        """
+        Use this to print result in each iteration.
+        This prints a simple result of the last solution (an chromosome) that its cost has been computed.
+        """
+        cost = self.compute_cost(solution_vector)
+        print(f"solution {solution_vector} with cost: {cost} in the iteration {iteration}")
 
 
 class Sphere(CostFunction):
@@ -64,13 +75,14 @@ class Sphere(CostFunction):
         # set Sphere parameters:
         super().__init__(dimensions=5, min_boundary=-10, max_boundary=+10, name="Sphere")
 
-    def compute_cost(self, agents_rows):
-        agents_rows = agents_rows.reshape(-1, self.dimensions)
-        cost = np.sum(agents_rows ** 2, axis=1)
+    def compute_cost(self, solution_vectors: np.ndarray):
+        solution_vectors = np.array(solution_vectors)
+        solution_vectors = solution_vectors.reshape(-1, self.dimensions)
+        cost = np.sum(solution_vectors ** 2, axis=1)
         return cost
 
-    def plot_solution(self, solution):
-        raise Exception("there is not plot for Sphere problem.")
+    def visual_result(self, solution_vector):
+        pass
 
 
 class NQueen(CostFunction):
@@ -78,60 +90,51 @@ class NQueen(CostFunction):
     def __init__(self, num_of_queen: int = 8):
         super().__init__(dimensions=num_of_queen, min_boundary=0, max_boundary=1, name="N Queen")
 
-    def get_print_solution(self, agents_rows, costs):
-        # change coding representation to discrete number:
-        # instead of decoding all the rows in agents_rows we only pass the the best one,
-        #   to take a weight off print_solution work.
-        index = np.argmin(costs)  # find the best agent's index.
-
-        agents_row = np.array(agents_rows[index]).flatten()
-        agents_row = np.argsort(agents_row)  # change the representation (decoding to discrete numbers).
-
-        cost = costs[index]
-
-        print("best founded solution is:")
-        print("position: ", agents_row)
-        print("with the cost: ", cost)
-        return agents_row
-
-    def plot_solution(self, solution: list):
+    @CostFunction._discrete_decoding
+    def visual_result(self, solution_vector):
         """
         Show a representation of N Queen problem with the given solution.
-        :param solution: solution got by get_print_solution method. its a agent_row or (chromosome)
+        :param solution_vector: solution got by get_print_solution method. its a agent_row or (chromosome)
         :return:
         """
-        size = len(solution)
+        size = len(solution_vector)
         for row in range(size):
             line = "  "
             for col in range(size):
-                if solution[row] == col:
+                if solution_vector[row] == col:
                     line += "👑 "
                 else:
                     line += "⬜ "
             print(line)
 
-    def compute_cost(self, agents_rows):
+    @CostFunction._discrete_decoding
+    def compute_cost(self, solution_vectors):
 
-        if len(np.shape(agents_rows)) == 1:  # < if there is only one row in agents_rows, do>:
-            return self.compute_cost_of_1_agent(agents_rows)
+        if len(np.shape(solution_vectors)) == 1:  # < if there is only one row in agents_rows, do>:
+            return self.__compute_cost_of_a_row(solution_vectors)
 
         costs = []
-        for agent in agents_rows:
+        for agent in solution_vectors:
             # add computed fitness to the list of costs:
-            costs = np.append(costs, self.compute_cost_of_1_agent(agent))
+            costs = np.append(costs, self.__compute_cost_of_a_row(agent))
         return costs
 
-    def compute_cost_of_1_agent(self, agent_row):
+    @CostFunction._discrete_decoding
+    def print_step_result(self, solution_vector, iteration: int = ""):
+        super().print_step_result(solution_vector, iteration)
+
+    def __compute_cost_of_a_row(self, agent_row):
         # compute cost for an agent or chromosome
 
         x = list(range(self.dimensions))
-        y = np.argsort(agent_row)  # change coding representation to discrete number.
+        y = agent_row
+        # y = np.argsort(agent_row)  # change coding representation to discrete number. #todo: did you replaced?
 
         cost = 0
-        for i in range(self.dimensions-1):
+        for i in range(self.dimensions - 1):
             for j in range(i + 1, self.dimensions):
                 if np.abs(x[i] - x[j]) == np.abs(y[i] - y[j]):
-                    cost = cost+1
+                    cost = cost + 1
         return cost
 
 
@@ -180,10 +183,10 @@ class TravellingSalesmanProblem(CostFunction):
         plt.scatter(self.cities[0, :], self.cities[1, :], marker='o')
         plt.show()
 
-    def get_print_solution(self, agents_rows, costs):
+    def print_overall_result(self, solution_vector, costs):
         """
 
-        :param agents_rows:
+        :param solution_vector:
         :param costs:
         :return: The found solution so far.
         """
@@ -192,7 +195,7 @@ class TravellingSalesmanProblem(CostFunction):
         #   to take a weight off print_solution work.
         index = np.argmin(costs)  # find the best agent's index.
 
-        agents_row = np.array(agents_rows[index]).flatten()
+        agents_row = np.array(solution_vector[index]).flatten()
         agents_row = np.argsort(agents_row)  # change the representation (decoding to discrete numbers).
 
         cost = costs[index]
@@ -202,15 +205,16 @@ class TravellingSalesmanProblem(CostFunction):
         print("with the cost: ", cost)
         return agents_row
 
-    def plot_solution(self, solution):
+    def print_step_result(self, solution_vector):
         """
         Show a representation of TSP problem with the given solution.
-        :param solution: solution got by get_print_solution method. its a agent_row or (chromosome)
+        :param solution_vector: solution got by get_print_solution method. its a agent_row or (chromosome)
         :return:
         """
-        solution = np.append(solution, solution[0])  # adding the first element to the last. e.g. 5 > 4 > 3 > [5].
+        solution_vector = np.append(solution_vector,
+                                    solution_vector[0])  # adding the first element to the last. e.g. 5 > 4 > 3 > [5].
 
-        solution = solution.astype(int)
+        solution_vector = solution_vector.astype(int)
 
         plt.scatter(self.cities[0, :], self.cities[1, :], marker='o')
         # annotate_cities = np.arange(1, self.dimensions + 1)
@@ -219,13 +223,13 @@ class TravellingSalesmanProblem(CostFunction):
         # for num in annotate_cities:
         #     aplot.annotate(num, (self.cities[0, num], self.cities[1, num]))
 
-        plt.plot(self.cities[0, solution], self.cities[1, solution])
+        plt.plot(self.cities[0, solution_vector], self.cities[1, solution_vector])
         plt.show()
 
-    def compute_cost(self, agents_rows):
+    def compute_cost(self, solution_vectors):
         """
 
-        :param agents_rows: matrix is a combination order to travel to cities.
+        :param solution_vectors: matrix is a combination order to travel to cities.
         :return: cost of the given order.
         """
         # change coding representation to discrete number:
@@ -235,12 +239,12 @@ class TravellingSalesmanProblem(CostFunction):
                             "object definition whether use create_cities() function to make your own cities.")
         cost = 0
 
-        one_agents = len(agents_rows.shape) == 1  # do we have just one agent? (agents_rows contain only one row?)
+        one_agents = len(solution_vectors.shape) == 1  # do we have just one agent? (agents_rows contain only one row?)
 
         # adding the first element to the last. e.g. 5 > 4 > 3 > [5].
         if one_agents:
-            agents_rows = np.argsort(agents_rows)
-            solution = np.append(agents_rows, agents_rows[0])
+            solution_vectors = np.argsort(solution_vectors)
+            solution = np.append(solution_vectors, solution_vectors[0])
 
             # need a loop to travel to the all cities:
             solution = solution.astype(int)  # todo: remove this
@@ -249,8 +253,8 @@ class TravellingSalesmanProblem(CostFunction):
                 ii = solution[index + 1]  # the second city is following:
                 cost += self.distance_matrix[i, ii]
         else:
-            agents_rows = np.argsort(agents_rows, axis=1)
-            solution = np.hstack((agents_rows, agents_rows[:, 0].reshape(-1, 1)))
+            solution_vectors = np.argsort(solution_vectors, axis=1)
+            solution = np.hstack((solution_vectors, solution_vectors[:, 0].reshape(-1, 1)))
 
             # need a loop to travel to the all cities:
             solution = solution.astype(int)  # todo: remove this
