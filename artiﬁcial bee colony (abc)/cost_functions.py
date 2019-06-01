@@ -48,6 +48,11 @@ class CostFunction:
         return wrapper
 
     def compute_cost(self, solution_vectors):
+        """
+        temporary docstring
+        :param solution_vectors:
+        :return:
+        """
         raise NotImplementedError
 
     def visual_result(self, solution_vector):
@@ -183,49 +188,7 @@ class TravellingSalesmanProblem(CostFunction):
         plt.scatter(self.cities[0, :], self.cities[1, :], marker='o')
         plt.show()
 
-    def print_overall_result(self, solution_vector, costs):
-        """
-
-        :param solution_vector:
-        :param costs:
-        :return: The found solution so far.
-        """
-        # change coding representation to discrete number:
-        # instead of decoding all the rows in agents_rows we only pass the the best one,
-        #   to take a weight off print_solution work.
-        index = np.argmin(costs)  # find the best agent's index.
-
-        agents_row = np.array(solution_vector[index]).flatten()
-        agents_row = np.argsort(agents_row)  # change the representation (decoding to discrete numbers).
-
-        cost = costs[index]
-
-        print("best founded solution is:")
-        print("position: ", agents_row)
-        print("with the cost: ", cost)
-        return agents_row
-
-    def print_step_result(self, solution_vector):
-        """
-        Show a representation of TSP problem with the given solution.
-        :param solution_vector: solution got by get_print_solution method. its a agent_row or (chromosome)
-        :return:
-        """
-        solution_vector = np.append(solution_vector,
-                                    solution_vector[0])  # adding the first element to the last. e.g. 5 > 4 > 3 > [5].
-
-        solution_vector = solution_vector.astype(int)
-
-        plt.scatter(self.cities[0, :], self.cities[1, :], marker='o')
-        # annotate_cities = np.arange(1, self.dimensions + 1)
-
-        # add number annotate to cities:
-        # for num in annotate_cities:
-        #     aplot.annotate(num, (self.cities[0, num], self.cities[1, num]))
-
-        plt.plot(self.cities[0, solution_vector], self.cities[1, solution_vector])
-        plt.show()
-
+    @CostFunction._discrete_decoding
     def compute_cost(self, solution_vectors):
         """
 
@@ -243,7 +206,7 @@ class TravellingSalesmanProblem(CostFunction):
 
         # adding the first element to the last. e.g. 5 > 4 > 3 > [5].
         if one_agents:
-            solution_vectors = np.argsort(solution_vectors)
+            # solution_vectors = np.argsort(solution_vectors)
             solution = np.append(solution_vectors, solution_vectors[0])
 
             # need a loop to travel to the all cities:
@@ -253,7 +216,7 @@ class TravellingSalesmanProblem(CostFunction):
                 ii = solution[index + 1]  # the second city is following:
                 cost += self.distance_matrix[i, ii]
         else:
-            solution_vectors = np.argsort(solution_vectors, axis=1)
+            # solution_vectors = np.argsort(solution_vectors, axis=1)
             solution = np.hstack((solution_vectors, solution_vectors[:, 0].reshape(-1, 1)))
 
             # need a loop to travel to the all cities:
@@ -264,6 +227,31 @@ class TravellingSalesmanProblem(CostFunction):
                 cost += self.distance_matrix[i, ii]
 
         return cost
+
+    @CostFunction._discrete_decoding
+    def visual_result(self, solution_vector):
+        """
+        Show a representation of TSP problem with the given solution.
+        :param solution_vector: solution got by get_print_solution method. its a agent_row or (chromosome)
+        """
+        # adding the first element to the last. e.g. 5 > 4 > 3 > [5]:
+        solution = np.append(solution_vector, solution_vector[0])
+
+        solution = solution.astype(int)
+
+        plt.scatter(self.cities[0, :], self.cities[1, :], marker='o')
+        # annotate_cities = np.arange(1, self.dimensions + 1)
+
+        # add number annotate to cities:
+        # for num in annotate_cities:
+        #     aplot.annotate(num, (self.cities[0, num], self.cities[1, num]))
+
+        plt.plot(self.cities[0, solution], self.cities[1, solution])
+        plt.show()
+
+    @CostFunction._discrete_decoding
+    def print_step_result(self, solution_vector, iteration: int = ""):
+        super().print_step_result(solution_vector, iteration)
 
 
 """

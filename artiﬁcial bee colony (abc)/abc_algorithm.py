@@ -32,7 +32,6 @@ class ArtificialBeeColony:
                                                               'position': self.employees[index],
                                                               'cost': self.employees_cost[index]}, ignore_index=True)
 
-
     def place_employed_bees(self):
         """
         #  (a) Place the employed bees on the food sources in the memory.
@@ -91,10 +90,10 @@ class ArtificialBeeColony:
         """
         Print best solution with its cost. This is used in the end of Iterations.
         """
-        costs = self.cost_func.plot_cost_vs_iteration(self.top_food_sources['cost'])
+        self.cost_func.plot_cost_vs_iteration(self.top_food_sources['cost'])
 
         print("Best founded solution is:")
-        idx_best = np.argmin(costs)
+        idx_best = np.argmin(self.top_food_sources['cost'])
         self.cost_func.print_step_result(self.top_food_sources.position[idx_best], idx_best)
 
         self.cost_func.visual_result(self.top_food_sources.position[idx_best][:])
