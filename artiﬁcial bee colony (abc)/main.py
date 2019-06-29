@@ -1,13 +1,17 @@
+from pandas.core.arrays.sparse import SparseAccessor
+
 from cost_functions import *
 from abc_algorithm import ArtificialBeeColony
 
 
 # initialize:
-cost_func = NQueen(15)
+from cost_functions import Sphere
+
+cost_func = TravellingSalesmanProblem(num_of_cities=5, distance_range=10)
 # cost_func = TravellingSalesmanProblem(10, 5)  # The problem to solve!
 artificialBeeColony = ArtificialBeeColony(cost_func, 50)
 
-max_iteration = 2000
+max_iteration = 200
 
 # <1><use following code for while loop instead of for loop>:
 # iteration = 0

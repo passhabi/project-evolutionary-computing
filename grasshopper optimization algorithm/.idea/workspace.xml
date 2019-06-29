@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a603c357-c7ae-4433-b7db-924ec47914fd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/grasshopper optimization algorithm.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../artiﬁcial bee colony (abc)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../artiﬁcial bee colony (abc)/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../artiﬁcial bee colony (abc)/abc_algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/../artiﬁcial bee colony (abc)/abc_algorithm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../artiﬁcial bee colony (abc)/cost_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/../artiﬁcial bee colony (abc)/cost_functions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../artiﬁcial bee colony (abc)/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../artiﬁcial bee colony (abc)/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,13 +18,92 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="19" selection-start-column="19" selection-end-column="19" />
+            <state relative-caret-position="64">
+              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+              <folding>
+                <element signature="e#20#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cost_functions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="75" column="12" selection-start-line="75" selection-start-column="6" selection-end-line="75" selection-end-column="12" />
+              <folding>
+                <element signature="e#77#2500#0" />
+                <element signature="e#77#141#1" />
+                <element signature="e#219#469#0" />
+                <element signature="e#519#543#0" />
+                <element signature="e#594#619#0" />
+                <element signature="e#670#695#0" />
+                <element signature="e#770#1644#0" />
+                <element signature="e#770#1199#1" />
+                <element signature="e#1287#1621#0" />
+                <element signature="e#1700#1827#0" />
+                <element signature="e#1700#1793#1" />
+                <element signature="e#1883#1908#0" />
+                <element signature="e#1963#2100#0" />
+                <element signature="e#2181#2500#0" />
+                <element signature="e#2181#2354#1" />
+                <element signature="e#2564#2676#0" />
+                <element signature="e#2991#2995#0" />
+                <element signature="e#3031#4909#0" />
+                <element signature="e#3082#3169#0" />
+                <element signature="e#3262#3764#0" />
+                <element signature="e#3262#3475#1" />
+                <element signature="e#3556#3764#0" />
+                <element signature="e#3620#3740#0" />
+                <element signature="e#3858#4226#0" />
+                <element signature="e#4087#4205#0" />
+                <element signature="e#4344#4397#0" />
+                <element signature="e#4457#4909#0" />
+                <element signature="e#4751#4889#0" />
+                <element signature="e#4807#4889#0" />
+                <element signature="e#4964#9872#0" />
+                <element signature="e#5047#5400#0" />
+                <element signature="e#5274#5347#0" />
+                <element signature="e#5443#5674#0" />
+                <element signature="e#5718#6910#0" />
+                <element signature="e#6062#6739#0" />
+                <element signature="e#6145#6739#0" />
+                <element signature="e#6385#6404#0" />
+                <element signature="e#6947#7027#0" />
+                <element signature="e#7120#8859#0" />
+                <element signature="e#7120#7262#1" />
+                <element signature="e#7375#7554#0" />
+                <element signature="e#7391#7553#0" />
+                <element signature="e#7799#8288#0" />
+                <element signature="e#8110#8288#0" />
+                <element signature="e#8315#8838#0" />
+                <element signature="e#8654#8838#0" />
+                <element signature="e#8952#9701#0" />
+                <element signature="e#8952#9144#1" />
+                <element signature="e#9401#9454#0" />
+                <element signature="e#9819#9872#0" />
+                <element signature="e#9875#10514#1" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>pass</find>
+      <find>lower_bound</find>
+      <find>position_history</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -38,6 +111,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/goa.py" />
+        <option value="$PROJECT_DIR$/cost_functions.py" />
         <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
@@ -46,48 +121,31 @@
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1456" />
-    <option name="height" value="876" />
+    <option name="height" value="916" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="grasshopper optimization algorithm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="grasshopper optimization algorithm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="grasshopper optimization algorithm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="grasshopper optimization algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="venv" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/venv" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Educational\Master’s degree\Evolutionary Computing\grasshopper optimization algorithm" />
+      <recent name="D:\Educational\Master’s degree\Evolutionary Computing\grasshopper optimization algorithm\venv" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Educational\Master’s degree\Evolutionary Computing\grasshopper optimization algorithm" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Educational\Master’s degree\Evolutionary Computing\grasshopper optimization algorithm\venv" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -143,11 +201,21 @@
       <updated>1559143639369</updated>
       <workItem from="1559143640953" duration="1565000" />
       <workItem from="1559202312485" duration="8000" />
+      <workItem from="1559411606564" duration="148000" />
+      <workItem from="1560788153918" duration="842000" />
+      <workItem from="1560888641117" duration="655000" />
+      <workItem from="1560922227268" duration="178000" />
+      <workItem from="1560923403642" duration="6369000" />
+      <workItem from="1561534317369" duration="1536000" />
+      <workItem from="1561650923179" duration="3853000" />
+      <workItem from="1561706268172" duration="26006000" />
+      <workItem from="1561789126613" duration="8741000" />
+      <workItem from="1561803566360" duration="5246000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1573000" />
+    <option name="totallyTimeSpent" value="55147000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -159,45 +227,135 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" internal_type="SLIDING" order="0" type="SLIDING" weight="0.23638968" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info content_ui="combo" id="Project" internal_type="SLIDING" order="1" type="SLIDING" weight="0.2602118" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
       <window_info anchor="bottom" id="TODO" internal_type="SLIDING" order="2" type="SLIDING" weight="0.32974428" />
       <window_info anchor="bottom" id="Version Control" internal_type="SLIDING" order="3" type="SLIDING" weight="0.32974428" />
       <window_info anchor="bottom" id="Terminal" internal_type="SLIDING" order="4" type="SLIDING" weight="0.3243607" />
-      <window_info anchor="bottom" id="Python Console" order="5" weight="0.32974428" />
-      <window_info anchor="bottom" id="Pylint" order="6" side_tool="true" weight="0.32974428" />
+      <window_info anchor="bottom" id="Python Console" order="5" weight="0.32839838" />
+      <window_info anchor="bottom" id="Pylint" order="6" sideWeight="0.5007163" side_tool="true" weight="0.30282637" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32974428" />
       <window_info anchor="bottom" id="Message" order="8" />
-      <window_info anchor="bottom" id="Find" order="9" />
-      <window_info anchor="bottom" id="Run" order="10" weight="0.28802153" />
-      <window_info anchor="bottom" id="Debug" order="11" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="9" weight="0.32974428" />
+      <window_info anchor="bottom" id="Run" order="10" sideWeight="0.49928367" visible="true" weight="0.30282637" />
+      <window_info anchor="bottom" id="Debug" order="11" weight="0.3485868" />
       <window_info anchor="bottom" id="Cvs" order="12" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="13" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" weight="0.3252149" />
-      <window_info anchor="right" id="JSON Viewer" order="4" show_stripe_button="false" weight="0.3295129" />
-      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="JSON Viewer" order="0" show_stripe_button="false" weight="0.3295129" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Database" order="2" />
+      <window_info active="true" anchor="right" id="SciView" order="3" sideWeight="0.49601594" visible="true" weight="0.3409742" />
+      <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="5" weight="0.25" />
+      <window_info anchor="right" x="0" y="0" width="314" height="676" id="Documentation" order="6" sideWeight="0.50398403" side_tool="true" weight="0.3409742" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="position_history" />
+      </configuration>
+    </watches-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/grasshopper_optimization_algorithm$main.coverage" NAME="main Coverage Results" MODIFIED="1559143977138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/grasshopper_optimization_algorithm$main.coverage" NAME="main Coverage Results" MODIFIED="1561808825160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>i</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cost_functions.py" />
+    <entry file="file://$PROJECT_DIR$/goa.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../Python/Complete Python Bootcamp Go from zero to hero in Python 3/cheatsheet.ipynb">
+      <provider selected="true" editor-type-id="jupyter-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="19" selection-start-column="19" selection-end-column="19" />
+        <state relative-caret-position="64">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+          <folding>
+            <element signature="e#20#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cost_functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="75" column="12" selection-start-line="75" selection-start-column="6" selection-end-line="75" selection-end-column="12" />
+          <folding>
+            <element signature="e#77#2500#0" />
+            <element signature="e#77#141#1" />
+            <element signature="e#219#469#0" />
+            <element signature="e#519#543#0" />
+            <element signature="e#594#619#0" />
+            <element signature="e#670#695#0" />
+            <element signature="e#770#1644#0" />
+            <element signature="e#770#1199#1" />
+            <element signature="e#1287#1621#0" />
+            <element signature="e#1700#1827#0" />
+            <element signature="e#1700#1793#1" />
+            <element signature="e#1883#1908#0" />
+            <element signature="e#1963#2100#0" />
+            <element signature="e#2181#2500#0" />
+            <element signature="e#2181#2354#1" />
+            <element signature="e#2564#2676#0" />
+            <element signature="e#2991#2995#0" />
+            <element signature="e#3031#4909#0" />
+            <element signature="e#3082#3169#0" />
+            <element signature="e#3262#3764#0" />
+            <element signature="e#3262#3475#1" />
+            <element signature="e#3556#3764#0" />
+            <element signature="e#3620#3740#0" />
+            <element signature="e#3858#4226#0" />
+            <element signature="e#4087#4205#0" />
+            <element signature="e#4344#4397#0" />
+            <element signature="e#4457#4909#0" />
+            <element signature="e#4751#4889#0" />
+            <element signature="e#4807#4889#0" />
+            <element signature="e#4964#9872#0" />
+            <element signature="e#5047#5400#0" />
+            <element signature="e#5274#5347#0" />
+            <element signature="e#5443#5674#0" />
+            <element signature="e#5718#6910#0" />
+            <element signature="e#6062#6739#0" />
+            <element signature="e#6145#6739#0" />
+            <element signature="e#6385#6404#0" />
+            <element signature="e#6947#7027#0" />
+            <element signature="e#7120#8859#0" />
+            <element signature="e#7120#7262#1" />
+            <element signature="e#7375#7554#0" />
+            <element signature="e#7391#7553#0" />
+            <element signature="e#7799#8288#0" />
+            <element signature="e#8110#8288#0" />
+            <element signature="e#8315#8838#0" />
+            <element signature="e#8654#8838#0" />
+            <element signature="e#8952#9701#0" />
+            <element signature="e#8952#9144#1" />
+            <element signature="e#9401#9454#0" />
+            <element signature="e#9819#9872#0" />
+            <element signature="e#9875#10514#1" />
+          </folding>
         </state>
       </provider>
     </entry>
