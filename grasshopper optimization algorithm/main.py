@@ -5,7 +5,7 @@ import numpy as np
 max_iteration = 100
 
 # __init__:
-cost_func = TravellingSalesmanProblem(10, 100)
+cost_func = NQueen()
 swarm_size = 50
 f = 0.5  # intensity of attraction
 l = 1.5  # attractive length scale
@@ -38,25 +38,24 @@ def s_func(r):
     return f * np.exp(-r / l) - np.exp(-r)  # Eq.(2.3) in the paper
 
 
-for epoch in range(max_iteration):
+for epoch in range(max_iteration+1):
     # def update_c (def, it:int):
     # update c using eq. 2.8:
     c = c_max - epoch * ((c_max - c_min) / max_iteration)
 
     # def change_grasshopper_position():
     for i in range(swarm_size):
-        s_ij = 0
+        sigma = 0
         for j in range(swarm_size):
             if i != j:
                 distance_ij = distance(swarm[i], swarm[j])  # Calculate the distance between two grasshoppers
-                r_ij_vec = (swarm[j] - swarm[i]) / (distance_ij + 1e-20)  # xj - xi / dij in Eq.(2.7)
-                # xj_xi = np.abs(swarm[j] - swarm[i])  # | xjd - xid | in Eq.(2.7)
-                xj_xi = cost_func.dimensions + (distance_ij % cost_func.dimensions)  # | xjd - xid | in Eq.(2.7) # ?
+                distance_ij_hat = (swarm[j] - swarm[i]) / (distance_ij + 1e-20)  # xj - xi / dij in Eq.(2.7)
+                xj_xi = s_func(2 + (distance_ij % 2))  # s(| xjd - xid |) in Eq.(2.7)
 
                 # The first part inside the big bracket in Eq. (2.7):
-                s_ij += ((cost_func.upper_bound - cost_func.lower_bound) * c / 2) * s_func(xj_xi) * r_ij_vec
+                sigma += ((cost_func.upper_bound - cost_func.lower_bound) * c / 2) * xj_xi * distance_ij_hat
         # update the grasshopper ith position:
-        swarm[i] = c * s_ij + target_position  # Eq. (2.7) in the paper
+        swarm[i] = c * sigma + target_position  # Eq. (2.7) in the paper
 
     # boundary check:
     for i in range(len(swarm)):
@@ -66,24 +65,19 @@ for epoch in range(max_iteration):
             # if element is less that min boundary, set it to min boundary:
             swarm[i, j] = max(swarm[i, j], cost_func.lower_bound)
 
-
     # update swarm costs:
     swarm_costs = cost_func.compute_cost(swarm)
-    # save the best results:
     i = np.argmin(swarm_costs)
-    position_history.append(swarm[i].copy())
-    cost_history.append(swarm_costs[i])
 
     if target_cost > swarm_costs[i]:  # if <swarm_cost was better>:
         target_position = swarm[i]
         target_cost = swarm_costs[i]
 
+    # save the best results of the iteration:
+    position_history.append(swarm[i].copy())
+    cost_history.append(swarm_costs[i].copy())
 
 cost_func.plot_cost_vs_iteration(cost_history)
 i = np.argmin(cost_history)
 cost_func.print_step_result(position_history[i], i)
 cost_func.visual_result(position_history[i])
-
-
-
-
