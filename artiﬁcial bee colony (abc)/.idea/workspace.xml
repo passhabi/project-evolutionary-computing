@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="600d6a0b-20d4-4ff3-a7c4-0a9e7a06020a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../grasshopper optimization algorithm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../grasshopper optimization algorithm/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../grasshopper optimization algorithm/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../grasshopper optimization algorithm/main.py" afterDir="false" />
@@ -32,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+            <state relative-caret-position="208">
+              <caret line="13" column="19" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="19" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
               </folding>
@@ -86,7 +85,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1456" />
@@ -225,14 +224,15 @@
       <workItem from="1560886795816" duration="883000" />
       <workItem from="1560923703872" duration="34000" />
       <workItem from="1560924769551" duration="603000" />
+      <workItem from="1561992058340" duration="192000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175867000" />
+    <option name="totallyTimeSpent" value="176059000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info auto_hide="true" content_ui="combo" id="Project" internal_type="SLIDING" order="0" type="SLIDING" weight="0.25716332" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -250,13 +250,13 @@
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007163" side_tool="true" weight="0.28398386" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.37480798" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49856734" weight="0.32056195" />
-      <window_info anchor="bottom" id="Run" order="13" weight="0.27725437" />
+      <window_info anchor="bottom" id="Run" order="13" weight="0.27659574" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="SciView" order="3" sideWeight="0.8264209" visible="true" weight="0.37291983" />
+      <window_info active="true" anchor="right" id="SciView" order="3" sideWeight="0.82487726" visible="true" weight="0.37291983" />
       <window_info anchor="right" id="Database" order="4" sideWeight="0.49832216" weight="0.3295129" />
-      <window_info anchor="right" x="0" y="0" width="314" height="676" id="Documentation" order="5" sideWeight="0.17357911" side_tool="true" visible="true" weight="0.37291983" />
+      <window_info anchor="right" x="0" y="0" width="314" height="676" id="Documentation" order="5" sideWeight="0.17512275" side_tool="true" visible="true" weight="0.37291983" />
       <window_info anchor="right" id="JSON Viewer" order="6" sideWeight="0.49932706" weight="0.3295129" />
     </layout>
   </component>
@@ -303,19 +303,8 @@
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/abc_algorithm.py</url>
-          <line>25</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/articial_bee_colony__abc_$main.coverage" NAME="main Coverage Results" MODIFIED="1559408124611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/articial_bee_colony__abc_$main.coverage" NAME="main Coverage Results" MODIFIED="1561992217189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/idea.properties">
@@ -478,8 +467,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+        <state relative-caret-position="208">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="19" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
           </folding>

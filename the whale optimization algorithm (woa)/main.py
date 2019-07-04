@@ -3,13 +3,14 @@ import numpy as np
 
 
 # initialize parameters:
-cost_func = TravellingSalesmanProblem(10, 50)  # problem definition.
+cost_func = Sphere()  # problem definition.
 dim = cost_func.dimensions
 lb = cost_func.lower_bound
 ub = cost_func.upper_bound
 
 max_iteration = 500
 n_whales = 50
+b = 3  # a constant, parameters in Eq.(2.5)
 
 # Initialize the positions of search agents:
 positions = np.random.uniform(lb, ub, size=[n_whales, dim])
@@ -29,7 +30,6 @@ cost_history = []
 for t in range(max_iteration):
     # Update a (for all whale), A, C, l, and p (for each whale):
     a = 2 - t * (2 / max_iteration)  # a decreases linearly from 2 to 0 in Eq. (2.3)
-    b = 1  # a constant, parameters in Eq.(2.5)
 
     for i in range(n_whales):
         r1 = np.random.rand() # r1 is a random number in [0, 1]

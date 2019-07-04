@@ -7,8 +7,8 @@ from abc_algorithm import ArtificialBeeColony
 # initialize:
 from cost_functions import Sphere
 
-cost_func = TravellingSalesmanProblem(num_of_cities=5, distance_range=10)
-# cost_func = TravellingSalesmanProblem(10, 5)  # The problem to solve!
+# cost_func = TravellingSalesmanProblem(num_of_cities=5, distance_range=10)
+cost_func = NQueen()  # The problem to solve!
 artificialBeeColony = ArtificialBeeColony(cost_func, 50)
 
 max_iteration = 200

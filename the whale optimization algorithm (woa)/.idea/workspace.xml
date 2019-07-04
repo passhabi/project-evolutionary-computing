@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1336bb63-e8a2-45fe-9ea1-2fa01d899bca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/the whale optimization algorithm (woa).iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../artiﬁcial bee colony (abc)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../artiﬁcial bee colony (abc)/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../artiﬁcial bee colony (abc)/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../artiﬁcial bee colony (abc)/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../grasshopper optimization algorithm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../grasshopper optimization algorithm/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../grasshopper optimization algorithm/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../grasshopper optimization algorithm/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../module/selection.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,8 +35,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="14" column="56" lean-forward="true" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
+            <state relative-caret-position="167">
+              <caret line="62" column="19" lean-forward="true" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -104,6 +105,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -168,12 +170,12 @@
       <workItem from="1562104797482" duration="660000" />
       <workItem from="1562226955431" duration="587000" />
       <workItem from="1562259556222" duration="384000" />
-      <workItem from="1562260056072" duration="9110000" />
+      <workItem from="1562260056072" duration="10187000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15972000" />
+    <option name="totallyTimeSpent" value="17049000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -192,7 +194,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32974428" />
       <window_info anchor="bottom" id="Message" order="8" />
       <window_info anchor="bottom" id="Find" order="9" />
-      <window_info anchor="bottom" id="Run" order="10" weight="0.44818303" />
+      <window_info anchor="bottom" id="Run" order="10" weight="0.27994618" />
       <window_info anchor="bottom" id="Debug" order="11" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="12" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="13" weight="0.4" />
@@ -209,7 +211,7 @@
     <option name="version" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/the_whale_optimization_algorithm__woa_$main.coverage" NAME="main Coverage Results" MODIFIED="1562278154857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/the_whale_optimization_algorithm__woa_$main.coverage" NAME="main Coverage Results" MODIFIED="1562278786399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/woa.py" />
@@ -225,8 +227,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="56" lean-forward="true" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
+        <state relative-caret-position="167">
+          <caret line="62" column="19" lean-forward="true" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
