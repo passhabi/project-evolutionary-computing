@@ -3,10 +3,6 @@ import scipy.stats as st
 
 
 class Selection:
-    """
-    by Fatemeh Khodabakhsh
-    21 April 2019
-    """
 
     def __init__(self, population_size: int):
         """
