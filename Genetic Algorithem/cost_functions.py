@@ -7,10 +7,6 @@ from collections import Counter
 
 
 class CostFunction:
-    """
-    by Fatemeh Khodabakhsh and Hussein Asshabi
-    14 April 2019
-    """
 
     dimensions: int
     min_boundary: int
