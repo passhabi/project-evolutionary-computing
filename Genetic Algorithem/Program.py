@@ -1,5 +1,4 @@
 """
-by Hussein Asshabi & Fatemeh Khodabakhsh
 last update: 22 April 2019
 """
 import numpy as np
